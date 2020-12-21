@@ -712,7 +712,7 @@ function User(name){
 User('Alan'); // this undefined
 ```
 
-Lorsque vous appelez une fonction comme méthode d'un objet, le this est le this de l'objet précédent l'appel de la méthode, dans l'exemple ci-dessous c'est l'objet Model :
+Lorsque vous définissez une méthode dans un objet littéral, le this est l'objet littéral lui-même.
 
 ```js
 
@@ -761,17 +761,17 @@ const Student = {
 }
 ```
 
-Cet objet possède une propriété **prototype**, elle listera l'ensemble des propriétés héritées depuis l'ojet Student. La quasi-totalité des objets JS héritent de l'objet **Object** de JS.
+Cet objet possède une propriété **prototype**, elle listera l'ensemble des propriétés héritées depuis l'objet Student. La quasi-totalité des objets JS héritent de l'objet **Object** de JS.
 
 ```js
 Student.__proto__
 ```
 
-Vous pouvez dès lors appeler des méthodes, qui ne sont pas directement disponibles (héritées) dans l'objet Student.
+Vous pouvez dès lors appeler des méthodes, qui ne sont pas directement héritées dans l'objet Student.
 
 ### Comment ajouter une propriété sur un constructeur
 
-Reprenons l'exemple précédent, nous allons voir comment ajouter une propriété au constructeur User qui sera partagée par toutes les instances :
+Reprenons l'exemple précédent, nous allons voir comment ajouter une propriété au constructeur User qui sera partagée par toutes ses instances :
 
 ```js
 'use strict';
@@ -794,7 +794,7 @@ console.log(u1.fullName()); // Alan Phi
 
 ### Exercice prototype
 
-Ajoutez la possibilité de définir l'age dans la fonction constructeur User et modifiez pour toutes les instances de User la fonction fullName pour qu'elle affiche maintenant : le name le fullName et l'age d'un user.
+Ajoutez la possibilité de définir l'âge dans la fonction constructeur User. Modifiez pour toutes les instances de User la fonction fullName pour qu'elle affiche le name, le fullName et l'âge d'un user.
 
 Créez maintenant les 4 users suivants :
 
@@ -805,11 +805,9 @@ Créez maintenant les 4 users suivants :
 - Alice Car age 45 ans notes : 5, 18, 20
 ```
 
-Créez un nouveau prototype average dans la fonction constructeur User, cette fonction calculera la moyenne des notes de chaque user.
+Créez un nouveau prototype average dans la fonction constructeur User, qui calculera la moyenne des notes de chaque user.
 
-Ajoutez la possibilité de définir l'age dans la fonction constructeur User et modifiez pour toutes les instances de User la fonction fullName pour qu'elle affiche maintenant : le name le fullName et l'age d'un user.s
-
-Quand JS appelle cette méthode il ne la trouvera pas dans l'instance de User mais dans le prototype de l'instance User. Le this est donc bien le this de l'instance de User. Cette technique permet donc de créer des méthodes partagées par toutes les instances de User. Notez que vous pouvez tout à fait définir la méthode fullName après avoir fait l'instance de User.
+Quand JS appelle cette méthode il ne la trouvera pas dans l'instance de User mais dans son prototype. Cette technique permet donc de créer des méthodes partagées par toutes les instances. Notez que vous pouvez tout à fait définir la méthode fullName après avoir fait son instance.
 
 JS possède depuis **ES6** un mot clé class pour définir une classe, nous verrons qu'en fait ce mot clé permet de définir, comme dans l'exemple précédent, un constructeur.
 
@@ -826,7 +824,7 @@ const powerNumber = numbers.map( number => number ** 2);
 
 ### Exercice puissance 3
 
-Soit numbers une liste de nombres entiers, élevez à la puissance 3 les nombres pairs uniquement.
+Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
 
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -848,9 +846,7 @@ numbers.filter(number => number > 4);
 // [5, 6, 7, 8, 9, 10]
 ```
 
-- reduce. Applique un accumulateur de la droite vers la gauche et traite chaque élément de la liste.
-
-Vous pouvez passer une valeur par défaut à la fonction reduce, deuxième paramètre. Cette valeur est facultative et par défaut vaut 0.
+- reduce, applique une fonction qui est un accumulateur et qui traite chaque valeur d'une liste de la gauche vers la droite afin de la réduire en une seule valeur. Vous pouvez passer en deuxième paramètre une valeur facultative.
 
 ```js
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -866,14 +862,6 @@ numbers.reduce((acc, curr) => curr + acc, 100);
 
 Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
 
-### Exercice puissance 3 nombres pairs
-
-Soit la liste numbers d'entiers, filtrez les nombres pairs et les élever à la puissance 3.
-
-```js
-const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-```
-
 ### Exercice reduce sum impair
 
 Faites la somme des nombres impairs en utilisant la fonction reduce des valeurs suivantes :
@@ -884,7 +872,7 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 ### Exercice fonction map
 
-Utilisez la fonction map pour calculer le prix TTC des téléphones suivants en utilisant une fonction fléchée :
+Utilisez la fonction map pour calculer le prix TTC des téléphones. Utilisez une fonction fléchée.
 
 ```js
 const phones = [
@@ -923,7 +911,7 @@ let a, b;
 [a, b] = [10, 20];
 ```
 
-Si vous ne souhaitez affecter que quelques variables et récupérer le reste de l'assignation dans un tableau, vous devez utiliser le spread operator :
+Si vous ne souhaitez affecter que quelques variables et récupérer le reste de l'assignation dans un tableau, vous pouvez utiliser le spread operator :
 
 ```js
 let a, b, rest;
