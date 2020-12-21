@@ -43,7 +43,7 @@ n = "Hello";
 console.log(typeof n); // string
 ```
 
-Dans l'exemple ci-dessus le type de la variable **n** a changé, il est passé du type number au type string (par ré-assignation).
+Dans l'exemple ci-dessus le type de la variable **n** a changé; il est passé du type number au type string (par ré-assignation).
 
 Notons que lorsque vous définissez une variable sans lui affecter une valeur particulière, celle-ci est de type "undefined" :
 
@@ -54,7 +54,7 @@ console.log(typeof username); // undefined
 
 ## Les différents types en JS
 
-On distingue les types suivants en Javascript. Attention tous les types primitifs définissent des valeurs non modifiables (immuables).
+On distingue les types suivants en Javascript. Attention, tous les types primitifs définissent des valeurs non modifiables (immuables).
 
 ### 1. Types primitifs
 
@@ -62,14 +62,14 @@ On distingue les types suivants en Javascript. Attention tous les types primitif
 
 ```js
 
-// On ne peut modifier un "true" ...
+// On ne peut pas modifier un "true" ...
 let flag = true;
 ```
 
 - null
 
 ```js
-// On ne peut modifier un "null" ...
+// On ne peut pas modifier un "null" ...
 let flag = null;
 ```
 
@@ -79,7 +79,7 @@ let flag = null;
 
 - bigInt (big integer)
 
-Il faut ajouter l'opérateur **n** pour définir des BigInt
+Il faut ajouter l'opérateur **n** pour définir des BigInt.
 
 ```js
 const x = 2n ** 100n;
@@ -93,7 +93,7 @@ console.log(x);
 let message = "Hello World";
 ```
 
-- symbole (type introduit à partir de la norme ES6, un peu technique pour l'instant ...)
+- symbole (type introduit à partir de la norme ES6, que nous n'aborderons pas dans ce cours).
 
 
 ------
@@ -104,7 +104,7 @@ Ils sont mutables, on peut modifier la valeur d'un objet. Un objet est une valeu
 
 Dans la liste des objets vous avez :
 
-- Les objets classiques les classes et les fonctions
+- Les objets classiques : les classes et les fonctions.
 
 ```js
 class Model {
@@ -136,7 +136,7 @@ const now = new Date();
 
 - Les collections comme les tableaux, Map, Set, ...
 
-Les déclarations suivantes sont identiques :
+Les déclarations suivantes pour un tableau sont identiques :
 
 ```js
 let notes = [1, 2, 3];
@@ -167,7 +167,7 @@ console.log(ensemble);
 Définition let :
 **La variable définie avec let a une portée scopée au niveau du bloc dans lequel elle a été déclarée.**
 
-*Remarque importante : lorsque vous définissez une variable à l'intérieur d'une fonction elle est scopée (portée) dans la fonction elle-même, elle n'a pas d'effet de bord avec le reste du script.*
+*Remarque importante : lorsque vous définissez une variable à l'intérieur d'une fonction elle est scopée (portée) dans la fonction elle-même; elle n'a pas d'effet de bord avec le reste du script.*
 
 ```js
 
@@ -182,7 +182,7 @@ foo();
 console.log(a);
 ```
 
-Si vous définissez une variable **de même nom** à l'extérieur de la fonction alors, elle n'aura pas d'effet sur la variable à l'intérieur de la fonction foo ci-après :
+Si vous définissez une variable **de même nom** à l'extérieur de la fonction, alors elle n'aura pas d'effet sur la variable définie à l'intérieur de la fonction foo :
 
 ```js
 let a = 11;
@@ -199,9 +199,9 @@ foo();
 console.log(a);
 ```
 
-### Remonter des scopes 
+### Remonter des scopes
 
-JS cherche la définition de ses variables dans le scope courant et sinon en remontant les scopes, si la variable n'est définie dans aucun des scopes alors une erreur **ReferenceError** est levée.
+JS cherche la définition de ses variables dans le scope courant et sinon il remonte les scopes. Si la variable n'est définie dans aucun des scopes, alors une erreur **ReferenceError** est levée.
 
 ```js
 // bloc courant pour b
@@ -242,7 +242,7 @@ baz();
 
 ## Exercice scope calcul (sans coder)
 
-Est ce que le code qui suit vous semble correcte, répondre sans exécuter le code ? Si ce dernier n'est pas valide modifie-le afin qu'il puisse s'exécuter correctement.
+Est ce que le code qui suit vous semble correcte ? Répondre sans exécuter le code. Si ce dernier n'est pas valide modifiez-le afin qu'il puisse s'exécuter correctement.
 
 ```js
 
@@ -268,7 +268,7 @@ calcul();
 
 ## Exercice TDZ (temporal dead zone) (sans coder)
 
-Est ce que le code suivant est valide ? Répondez sans exécuter le code.
+Est ce que le code qui suit vous semble correcte ? Répondez sans exécuter le code.
 
 ```js
 function tdz() {
@@ -282,7 +282,7 @@ tdz();
 
 ## Exercice for let (sans coder)
 
-Est ce que le code suivant est valide ? Répondez sans exécuter le code.
+Est ce que le code qui suit vous semble correcte ? Répondez sans exécuter le code.
 
 ```js
 let i = 100;
@@ -294,7 +294,8 @@ for (let i = 0; i < 10; i++) {
 console.log(i);
 ```
 
-Est ce que le code suivant est valide ? Répondez sans exécuter le code.
+Est ce que le code qui suit vous semble correcte ? Répondez sans exécuter le code.
+
 Si ce code est valide qu'affichera-t-il ?
 
 ```js
@@ -307,14 +308,14 @@ console.log(j);
 Définition :
 **La variable définie avec const a une portée scopée au niveau du bloc dans lequel elle a été déclarée.**
 
-Le mot réservé du langage JS **const** permet de définir une constante à assignation unique. Notez que vous êtes obligé de lui donner une valeur lors de sa définition. Une constante ne peut être re-définit.
+Le mot réservé du langage JS **const** permet de définir une constante à assignation unique. Notez que vous êtes obligé de lui donner une valeur lors de sa définition. Une constante ne peut être re-définie.
 
 ```js
 const API_KEY = "ABf#123@";
 console.log(API_KEY);
 ```
 
-Une constante peut contenir tout type de variable. Dans le cas d'un objet comme un tableau par exemple, les valeurs du tableau sont modifiables(...) En effet, une constante bloque la ré-assignation de la variable, mais ne rend pas l'objet non-modifiable.
+Une constante peut contenir tous types de variable. Dans le cas d'un objet comme un tableau par exemple, les valeurs du tableau sont modifiables. En effet, une constante bloque la ré-assignation de la variable, mais ne rend pas l'objet non-modifiable.
 
 ```js
 
@@ -358,7 +359,7 @@ const STUDENTS = ["Alan", "Bernard", "Jean"];
 
 ### var définition
 
-*Ce mot clé pour définir une variable ne doit plus être utilisé, utilisez let à la place.*
+**Ce mot clé pour définir une variable ne doit plus être utilisé, utilisez let à la place.**
 
 Il permet de définir une variable globale ou locale à une fonction sans distinction de bloc :
 
@@ -392,9 +393,7 @@ bar(); //  2 10
 
 Une fonction en JS est un objet.
 
-### Paramètres par défaut
-
-Valeurs par défaut facultatif :
+### Paramètres par défaut (facultatif)
 
 ```js
 function add(a, sup = 1) {
@@ -409,7 +408,7 @@ add(10, 0); // affiche 10
 
 ### Exercice ttc
 
-1. Créez une fonction qui permet de calculer un prix ttc connaissant un prix HT. Donnez une valeur par défaut pour la tva en paramètre de la fonction, valeur de la tva par défaut : 20%.
+1. Créez une fonction qui permet de calculer un prix TTC connaissant un prix HT. Donnez une valeur de 20% par défaut pour la TVA.
 
 2. Vérifiez que le type des variables passées en paramètre ne posent pas de problème. Utilisez **parseFloat** pour la vérification des types. Affichez les résultats avec au plus 2 chiffres après la virgule. 
 
@@ -440,9 +439,9 @@ let numbers = [1, 2, 3];
 sum(...numbers); // sum(1, 2, 3) unpacking
 ```
 
-### Exercice sum spread ttc
+### Exercice sum spread TTC
 
-Ecrivez une fonction **sumTTC** qui prend 3 nombres arbitraires de prix HT et retourne la somme de ces prix TTC. La tva est facultative (20%).
+Ecrivez une fonction **sumTTC** qui prend 3 nombres arbitraires de prix HT et retourne la somme de ces prix TTC. La TVA est  un paramètre facultatif (20%).
 Vérifiez que le type des variables passées en paramètre ne posent pas de problème, utilisez **parseFloat**. Affichez les résultats avec au plus 2 chiffres après la virgule.
 
 Les prix HT seront donnés dans un tableau :
@@ -460,7 +459,7 @@ console.log(sumTTC(...badPriceHT, .3));
 
 ### littéral pour définir des paramètres
 
-Vous pouvez utiliser la syntaxe suivante pour définir les paramètres d'une fonction, dans ce cas vous n'avez pas à vous soucier de l'ordre des paramètres :
+Vous pouvez utiliser la syntaxe suivante pour définir les paramètres d'une fonction. Dans ce cas vous n'avez pas à vous soucier de l'ordre des paramètres passé à la fonction.
 
 ```js
 function baz({ a, b }){ 
@@ -503,7 +502,7 @@ const o3 = o1.f1;
 console.log(o3()) ; // undefined car on n'appelle la fonction f1 explicitement
 ```
 
-De même faite attention dans les fonctions de callback, dans l'exemple qui suit setTimeout fera appel à la fonction sans reprendre le context de l'objet lui-même, this sera, en mode strict, undefined :
+De même, faites attention dans les fonctions de callback. Dans l'exemple qui suit setTimeout fera appel à la fonction sans reprendre le context de l'objet lui-même, this sera, en mode strict, undefined :
 
 ```js
 'use strict';
@@ -552,13 +551,13 @@ const myFunc = function(){
 
 Les fonctions déclarées sont définies dès le début du script ou de la fonction qui la contient.
 
-Pour les expressions de fonction elles sont définies après leur évaluation.
+Les expressions de fonction sont définies après leur évaluation.
 
 ### Exercice déclaration
 
-Sans exécuter le code. 
+*Sans exécuter le code.* 
 
-1. Est-ce que à votre avis le code suivant est valide ?
+1. Le code suivant est-il valide ?
 
 ```js
 bar();
@@ -568,7 +567,7 @@ function bar(){
 }
 ```
 
-2. Est-ce que à votre avis le code suivant est valide ?
+2. Le code suivant est-il valide ?
 
 ```js
 myFunc(); 
@@ -580,7 +579,7 @@ const myFunc = function(){
 
 ### Arguments d'une fonction
 
-Vous n'êtes pas obligé de renseigner le nombre d'argument d'une fonction JS. La fonction possède en interne une propriété (objet) arguments qui récupère les paramètres de la fonction, attention arguments n'est pas un tableau :
+Vous n'êtes pas obligé de renseigner le nombre d'argument(s) d'une fonction en JS. La fonction possède en interne une propriété **arguments** qui récupère les paramètres de la fonction, attention arguments n'est pas un tableau :
 
 ```js
 function sum(){
@@ -593,7 +592,7 @@ function sum(){
 console.log(sum(1,2,3,4, 5, 6));
 ```
 
-L'objet arguments peut-être converti en tableau à l'aide de la méthode from sur l'objet Array :
+L'objet arguments peut-être converti en tableau à l'aide de la méthode from de l'objet Array :
 
 ```js
 const args = Array.from(arguments);
@@ -615,7 +614,7 @@ console.log( sum(1,2,3,5) ); // 11
 
 ### Les fonctions fléchées
 
-Les fonctions fléchées (arrow function) permettent d'avoir une syntaxe plus courte pour définir facilement des fonctions de rappel comme map, filter, reducer ...
+Les fonctions fléchées (arrow function) permettent d'avoir une syntaxe plus courte pour définir facilement des fonctions de rappel. On les utilise dans les fonctions JS telles que map, reduce, filter, ...
 
 ```js
 const power2 = (x) => {
@@ -626,19 +625,14 @@ console.log(numbers.map( power2 ));
 // [1, 4, 25]
 ```
 
-Si vous ne retournez qu'un seul résultat vous pouvez écrire la syntaxe concise suivante :
+Si vous ne retournez qu'une seule valeur, vous pouvez écrire la syntaxe suivante :
 
 ```js
 // syntaxe consise
 const sum = (x, y) => x + y ;
-
-// 
-const sum2 = (x, y) => {
-  return x + y;
-};
 ```
 
-Dans le cas ou vous souhaiteriez retourner un unique littéral, dans des accolades donc ..., utilisez la syntaxe suivante parenthèse :
+Dans le cas où vous souhaiteriez retourner un unique littéral, utilisez la syntaxe suivante (expression) :
 
 ```js
 // syntaxe consise
@@ -651,7 +645,7 @@ const model2 = (x, y) => {
 }
 ```
 
-Contrairement aux fonctions classiques, les fonctions fléchées ne re-définissent pas de this. Si vous vous référez dans une fonction fléchée au mot clé this, la fonction fléchée **récupérera le this du contexte** de définition de la fonction flèchée :
+Contrairement aux fonctions classiques, les fonctions fléchées ne re-définissent pas de this. Si vous vous référez dans une fonction fléchée au mot clé this, la fonction fléchée **récupérera le this du contexte** dans lequel elle a été définie.
 
 ```js
 const School = {
@@ -678,7 +672,7 @@ School.sayHello();
 School.sayHelloArrowFunc();
 ```
 
-Une fonction classique peut définir un constructeur, **pas une fonction flèchée**, dans ce cas par convention la fonction commence par une majuscule :
+Une fonction classique peut définir un constructeur, **pas une fonction flèchée**. Par convention le nom de la fonction commencera par une majuscule :
 
 ```js
 
@@ -705,7 +699,7 @@ const uA2 = new userArrow("Alan");
 */
 ```
 
-Remarque, sur la fonction user et this. Si vous appelez la fonction constructeur this sans le mode strict prendra la valeur du contexte de la fonction : window par exemple... Si vous mettez le mode strict dans ce cas this est undefined et si vous appelez une propriété comme name ci-dessous une exception sera levée :
+Remarque : si vous appelez la fonction constructeur comme une fonction classique, alors le this sera de type "undefined" en mode strict.
 
 ```js
 'use strict';
