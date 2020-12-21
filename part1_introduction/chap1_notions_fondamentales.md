@@ -4,7 +4,7 @@ JS première version 1995, auteur Brendan Eich.
 
 Rappelons que JS est un langage interprété dont le typage est faible. Mais attention, cela ne veut pas dire que JS ne définit pas un type à ses variables.
 
-Un typage faible permet les convertions de type implicites :
+Un typage faible permet les convertions de type implicite :
 
 ```js
 let foo = 1 + "2";
