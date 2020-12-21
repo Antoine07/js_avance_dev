@@ -17,21 +17,21 @@ Et JS a un typage dynamique, le type est déterminé à l'exécution :
 let a = 1;
 ```
 
-Un langage interprété utilise le code source pour le compiler puis l'exécuter, il n'y a pas de création d'exécutable. Pour chaque exécution, JS repartira du code source.
+Un langage interprété utilise le code source pour le compiler puis l'exécuter, il n'y a pas de création d'exécutable définitif. Pour chaque exécution, JS repartira du code source.
 
-Le moteur JS de compilation peut taguer du code qui se répète et créer, pour ces parties uniquement, un exécutable. 
+Le moteur JS de compilation peut taguer du code qui se répète et créer, pour ces parties uniquement, un exécutable "définitif".
 
-JS est un langage de script, orienté objet.
+JS est un langage de script orienté objet.
 
-JS suit la norme **ECMAScript**, standard que suivent certains langages de script comme Javascript. Cette norme évolue en permance. Les principaux navigateurs Web mettent à jour leur moteur d'exécution pour suivre les évolutions de ce langage.
+JS suit la norme **ECMAScript**, standard que suivent certains langages de script comme Javascript. Cette norme évolue en permanence. Les principaux navigateurs Web mettent à jour leur moteur d'exécution pour suivre les évolutions de ce langage.
 
-Une version majeure d'ECMAScript est celle qui a été définie en 2015 : ES2015 que l'on appelle ES6 ... Le nom de la version étant déterminé par la dernière version du standard en cours donc ES6 pour 2015 ... Aujourd'hui la dernière version officielle est EMACScript 2020.
+Une version majeure d'ECMAScript est celle qui a été définie en 2015 : ES2015 que l'on appelle ES6. Le nom de la version étant déterminé par la dernière version du standard en cours donc ES6 pour 2015. Aujourd'hui la dernière version officielle est EMACScript 2020.
 
 ## Typage
 
 Bien que JS soit un langage faiblement typé, JS type toutes ses variables.
 
-Le type d'une variable en JS est déterminé lorsqu'on la définit et qu'on lui assigne une valeur particulière. Ce dernier peut changer si on ré-assigne un valeur d'un autre type.
+Le type d'une variable en JS est déterminé lorsqu'on la définit et qu'on lui assigne une valeur particulière. Ce dernier peut changer si on ré-assigne à la variable une valeur d'un autre type.
 
 ```js
 let n = 10;
@@ -43,7 +43,7 @@ n = "Hello";
 console.log(typeof n); // string
 ```
 
-Dans l'exemple ci-dessus le type de la variable n a changé, il est passé du type number au type string (ré-assignation).
+Dans l'exemple ci-dessus le type de la variable **n** a changé, il est passé du type number au type string (par ré-assignation).
 
 Notons que lorsque vous définissez une variable sans lui affecter une valeur particulière, celle-ci est de type "undefined" :
 
