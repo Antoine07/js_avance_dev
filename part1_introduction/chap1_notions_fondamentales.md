@@ -1237,7 +1237,7 @@ console.log( false ? 'yes' : 'no'; ); // no
 
 ```
 
-Les ternaires sont également très pratique pour assigner des valeurs avec une condition :
+Les ternaires sont également très pratiques pour assigner des valeurs avec une condition :
 
 ```js
 logged = true ? 'yes' : 'no'; ; // yes
@@ -1274,11 +1274,9 @@ true || user
 
 ### Exercice accumulator
 
-Créez une fonction récursive (qui s'appelle elle-même, elle prendra deux arguments : un tableau de nombres et un accumulateur initialement égale à 0. Cette fonction retournera la somme des valeurs du tableau.
+Créez une fonction récursive permettant de retourner la somme des nombres d'un tableau de valeurs numériques. Utilisez un paramètre facultatif pour accumuler les valeurs de la somme. Ce paramètre sera initialisé à zéro.
 
-Utilisez la méthode shift() sur le tableau. Il permet de dépiler la première valeur du tableau. Dans votre fonction récursive définissez **une condition d'arrêt**, sinon la fonction continuera de s'appeler indéfiniment (Stack Overflow).
-
-Voyez l'exemple suivant pour vous aider à faire cet exercice :
+Utilisez la méthode shift() qui permet de dépiler la première valeur d'un tableau. Dans votre fonction récursive définissez **une condition d'arrêt**, sinon la fonction continuera de s'appeler elle-même indéfiniment (Stack Overflow).
 
 ```js
 
@@ -1324,6 +1322,5 @@ const students = [
     age: 55,
   },
 ];
-
 
 ```
