@@ -1302,22 +1302,19 @@ Faites une copie profonde de l'objet suivant :
 const students = [
   {
     name: "Alan",
-    address : [ {"street" : "Chateau"}, { "street" : "Cholvy"} ],
     family: {
-      mother: "Isa",
-      father: "Philippe",
+      mother: "Yvette",
+      father: "Paul",
       sister: "Sylvie",
     },
     age: 35,
-    notes : [11, 12, 15]
   },
   {
     name: "Bernard",
-    address : [ {"street" : "La Place"}, { "street" : "Lewis Carrol"} ],
     family: {
-      mother: "Particia",
+      mother: "Martine",
       father: "Cécile",
-      sister: "Annie",
+      sister: "Sophie",
     },
     age: 55,
   },
