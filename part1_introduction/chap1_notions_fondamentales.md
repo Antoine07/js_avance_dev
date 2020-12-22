@@ -987,7 +987,7 @@ const infoStudent_bis = ({ note, mention }) => "info : " + mention + "note : " +
 let a = 1, b = 2;
 ```
 
-- Soient les trois variables a, b, et c suivantes permutez les valeurs dans l'ordre suivant :
+- Soient les trois variables a, b, et c permutez les valeurs dans l'ordre suivant :
 
 - a <- b
 - b <- c
@@ -999,7 +999,7 @@ let a = 1, b = 2, c = 4;
 
 ### Exercice assigner par décomposition
 
-1. Calculez la moyenne des notes de l'étudiant. Modifiez le littéral.
+1. Calculez la moyenne des notes de l'étudiant. Modifiez la référence du littéral.
 
 2. Puis assignez les valeurs **name**, **notes** et **average** dans les constantes name, notes et average dans le script courant.
 
@@ -1018,7 +1018,7 @@ console.log(name, notes, average);
 
 ### Exercice iterate destructuring
 
-Soient les données suivantes affichez le nom et le nom de la soeur de chaque étudiant en utilisant une boucle for of :
+Affichez le nom et le nom de la soeur de chaque étudiant en utilisant une boucle for of dans le littéral students :
 
 // Nom : Alan soeur : Sylvie
 
@@ -1027,8 +1027,8 @@ const students = [
   {
     name: "Alan",
     family: {
-      mother: "Isa",
-      father: "Philippe",
+      mother: "Yvette",
+      father: "Paul",
       sister: "Sylvie",
     },
     age: 35,
@@ -1036,9 +1036,9 @@ const students = [
   {
     name: "Bernard",
     family: {
-      mother: "Particia",
+      mother: "Martine",
       father: "Cécile",
-      sister: "Annie",
+      sister: "Sophie",
     },
     age: 55,
   },
@@ -1047,7 +1047,7 @@ const students = [
 
 ## spread operator
 
-Vous pouvez effectuer un merge de deux tableaux en JS à l'aide de l'opérateur spread :
+Vous pouvez effectuer une fusion des deux tableaux en JS à l'aide de l'opérateur spread :
 
 ```js
 let numbers1 = [1, 2, 3, 4, 5, 7, 8, 9, 10];
@@ -1056,7 +1056,7 @@ let numbers2 = [11, 12, 13];
 let numMerge = [...numbers1, ...numbers2];
 ```
 
-Vous pouvez également "merger" deux littéraux :
+Vous pouvez également fusionner deux littéraux :
 
 ```js
 const st1 = { s1: "Alan", s2: "Alice" };
@@ -1067,9 +1067,7 @@ console.log(stMerge);
 //{s1: "Alan", s2: "Alice", s3: "Bernard", s4: "Sophie"}
 ```
 
-Le spread operator peut servir également pour "mettre à jour" une clé dans un littéral :
-
-En reprenant l'exemple précédent :
+Le spread operator peut servir également pour mettre à jour une clé dans un littéral.
 
 ```js
 const st11 = { s1: "Alan", s2: "Alice" };
@@ -1081,7 +1079,7 @@ console.log(stMerge);
 // {s1: "Alan", s2: "Bernard",  s4: "Sophie"}
 ```
 
-Un autre exemple de "mise à jour" avec cette technique 
+Un autre exemple de mise à jour avec cette technique.
 
 ```js
 const state = {
@@ -1096,7 +1094,7 @@ const newState = { ...state, email: "sophie@sophie.fr" };
 
 ## Exercice push value
 
-Soient les données suivantes. Créez un tableau strNumbers et pushez chacune des valeurs de ce tableau sans créer un tableau de tableaux. Rappelez-vous qu'une constante bloque uniquement l'assignation, mais si la constante est un objet vous pouvez toujours le modifier.
+Soient les données suivantes. Créez un tableau strNumbers et pushez-y chacune de ses valeurs.
 
 ```js
 const strNumbers = [];
@@ -1106,7 +1104,7 @@ const str2 = ["three", "four"];
 
 ## Nom de propriété calculé et décomposition
 
-Vous pouvez utiliser une variable pour définir une clé d'un littéral, dans ce cas la syntaxe est la suivante, il faut utiliser des crochets pour que JS interprète la variable comme une clé du littéral :
+Vous pouvez utiliser une variable pour définir une clé d'un littéral. Dans la syntaxe ci-dessous, il faut utiliser les crochets pour que JS interprète la variable comme une clé du littéral.
 
 ```js
 const state = {
@@ -1121,11 +1119,11 @@ const newState = { ...state, [name]: "bernard@bernard.fr" };
 
 ## Exercice ordre et longueur de mots
 
-Utilisez la fonction sort de JS. Voir la documentation de cette fonction.
+Utilisez la fonction sort de JS.
 
 1. Ordonnez les students par ordre alphabétique. 
 
-2. Ordonnez par ordre croissant en fonction de la longueur des noms.
+2. Ordonnez maintenant par ordre croissant en fonction de la longueur des noms.
 
 ```js
 const students = [ "Alan", "Philippe", "Tony", "Geraldine", "Michelle", "Phi" ];
@@ -1157,17 +1155,13 @@ const populations = [
 ];
 ```
 
-1. Soit les données suivantes populations, ordonnez-les par ordre croissant par rapport à la longueur des noms.
+1. Ordonnez les données populations par ordre croissant de longueur de nom.
 
-*Indications : utilisez la méthode **sort**, cette méthode modifie le tableau. Vous pouvez lui passer une fonction (fléchée) pour calculer l'ordre par rapport à une clé du tableau ou un calcul spécifique. Reportez-vous à la documentation : [sort](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/sort).*
+2. Ajoutez une clé **lenName** aux éléments du tableau populations afin d'assignerer la longueur de chaque nom à cette variable.
 
-2. Ajoutez une clé **lenName** aux éléments du tableau populations vous assignerez la longueur de chaque nom à cette variable.
+3. Regroupez maintenant dans un nouveau tableau groupNames les noms de même longueur.
 
-3. Regroupez maintenant dans un nouveau tableau groupNames les noms de même longueur (même nombre de caractères).
-
-*Indications : Imaginez une structure de données (voir l'exemple ci-après), par exemple un tableau de tableau ou un Map, vous pouvez également utiliser **filter** pour regrouper les noms de même longueur dans le nouveau tableau groupNames*
-
-Présentez les résultats recherchés comme suit par exemple :
+Vous pouvez présenter les résultats recherchés comme suit :
 
 ```js
 [
@@ -1193,7 +1187,7 @@ Présentez les résultats recherchés comme suit par exemple :
 ]
 ```
 
-4. (Facultatif) Ajoutez une clé relation au tableau population et indiquez pour chaque personne les noms de ses relations. Ordonnez ces relations par ordre croissant de nombre de relation. Affichez la personne qui le plus de relation.
+4. (Facultatif) Créez une clé relations au tableau populations et ajoutez pour chaque personne le nom de ses relations. Ordonnez les par ordre croissant de nombre de relations. Affichez la personne qui a le plus de relations.
 
 ```js
 const relations = [
@@ -1211,7 +1205,7 @@ const relations = [
 
 Vous pouvez écrire des chaînes de caractères sur plusieurs lignes et insérer des expressions JS qui seront évaluées à l'aide de backquotes (accent grave).
 
-Intérêt la concaténation sans l'interpolation donne une expression comme suit :
+Exemple
 
 ```js
 let a = 51;
@@ -1227,14 +1221,14 @@ let b = 90;
 console.log(`Somme : ${a + b} et \n multiplication : ${a * b}.`);
 ```
 
-On peut également intégrer des ternaires comme suit avec les cotes couchés :
+Exemple avec une expression JS :
 
 ```js
 let isLoading = true;
 const message = `Data is ${isLoading ? 'loading...' : 'done!'}`;
 ```
 
-Remarque sur la syntaxe ternaire, très pratique pour écrire une condition sur une ligne :
+Remarque sur la syntaxe ternaire, pour écrire une condition sur une ligne :
 
 ```js
 
@@ -1243,7 +1237,7 @@ console.log( false ? 'yes' : 'no'; ); // no
 
 ```
 
-Les ternaires sont très pratiques également pour assigner des valeurs avec une condition :
+Les ternaires sont également très pratique pour assigner des valeurs avec une condition :
 
 ```js
 logged = true ? 'yes' : 'no'; ; // yes
@@ -1252,32 +1246,25 @@ logeed =  false ? 'yes' : 'no'; ; // no
 
 ```
 
-Vous pouvez enchâiner les ternaires mais, attention à la lisibilité de ces derniers.
+Vous pouvez enchaîner les ternaires mais, attention à la lisibilité.
 
 ```js
 logged = true ? ( true ? 'toujours yes' : 'no' )  : 'no'; ; // toujours yes
 ```
 
-## Optimisation
+## Ce qui est considéré comme faux en JS 
 
-**Memory leak**
+0, NaN, undefined, false, "", '', \`\`, null
 
-- JS purge le scope à la sortie de la fonction parente.
 
-- Converse les pp appelées dans les closures.
+## Evaluations courcircuit
 
-- y compris les closures qui ne sont plus référencées.
-
-## Ce qui est faux en JS 
-
-0, NaN, undefined, false, "", '', ``, null
-
-- Evaluation courcicuit, par exemple user n'est pas défini, mais ne sera pas évalué :
+- Dans le cas où user n'est pas défini avec le connecteur ET 
 
 ```js
 false && user 
 ```
-Une deuxième évaluation courcicuit, renverra true
+- Avec un OU
 
 ```js
 true || user
