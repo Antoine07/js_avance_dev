@@ -27,7 +27,7 @@ console.log(newFruits.length === fruits.length)
 
 ## Exercice copie de population
 
-Ecrivez un script qui permet de copier dans une nouvelle référence le tableau de données suivant :
+- 1. Parcourez le tableau suivant et ajoutez un champ countA qui compte le nombre d'occurence de a dans les noms de la population. Utilisez un for of.
 
 ```js
 
@@ -49,19 +49,11 @@ const populations = [
 
 ```
 
-## Copie d'un tableau
-
-Si vous assignez un tableau t1 dans une variable t2 alors JS ne crée pas un nouveau tableau. t2 a la même référence mémoire que t1. Modifier un des deux tableaux t1 ou t2 modifiera alors l'autre. 
+- 2. Ordonnez maintenant le tableau par ordre croissant de nombre de a dans les noms.
 
 ## Fonction map
 
-La méthode map permet de parcourir un tableau et d'exécuter une fonction pour chaque élément du tableau. Dans l'exemple ci-dessous, i est un compteur et curr est la valeur courante du tableau arr :
-
-```js
-arr.map((curr, i) => console.log(i, curr));
-```
-
-La méthode map retourne un nouveau tableau avec les résultats de l'appel d'une fonction sur chaque élément du tableau :
+La méthode map permet de parcourir un tableau et d'exécuter une fonction pour chaque élément du tableau. Elle retournera un nouveau tableau.
 
 ```js
 const sheeps = ['🐑', '🐑', '🐑'];
@@ -70,25 +62,23 @@ const newSheeps = sheeps.map( sheep => sheep + sheep );
  // ["🐑🐑", "🐑🐑", "🐑🐑"]
 ```
 
-### Exercice copie de fruits
-
-Proposez une solution pour copier le tableau fruits en utilisant map.
-
 ### Exercice square numbers
 
-Ecrire un script, qui utilise map, qui permet d'élever au carré les nombres de la liste suivante :
+1. Soit le point A suivant, calculez la distance de ce point à l'ensemble des points de la liste positions. Vous donnerez les résultats dans un nouveau tableau distances.
 
 ```js
-let numbers = [1, 8, 3, 7];
+const A = [8.3, 7.5];
+const positions = [[1,1], [2, 2], [3, 4.5], [0, 9]];
+const distances = [];
 ```
 
-### Exercice mult number 
-
-Ecrire une fonction qui multiple par 3 les nombres pairs et par 5 les nombres impairs de la liste des nombres suivants :
+Rappelons comment on effectue le calcul de la distance avec une précision de deux chiffres après la virgule.
 
 ```js
+const X = [1,2];
+const B = [4,1.5];
 
-let numbers = [7, 9, 10, 1, 2, 3, 71, 8 ];
+const d = Math.floor( Math.square( (X[0] - B[0] )**2 + (X[1] - B[1] )**2 ) * 100) / 100 ;
 ```
 
 ### Exercice string
@@ -105,21 +95,7 @@ Indication : utilisez la méthode split pour transformer la chaîne en tableau.
 const sentence = "Bonjour tout le monde, vous aimez JS ?";
 ```
 
-## Méthode spread pour copier un tableau
-
-Vous pouvez utiliser la méthode spread pour faire une copie peu profonde d'un objet :
-
-```js
-    let numbers = [7, 9, 10, 1, 2, 3, 71, 8 ];
-
-    let cloneNumbers = [ ...numbers ];
-
-```
-
-Le spread operator ne marchera pas sur des objets plus complexes (imbriqués).
-
-
-## Map
+## Structure de données Map
 
 Un objet Map est une collection de paires clé/valeur qui peut utiliser n'importe quel type de données comme clé.
 
@@ -128,7 +104,9 @@ const jedi = new Map()
 
 ```
 
-### Ajoutez des valeurs dans un Map 
+### Ajout de valeurs dans un Map 
+
+Vous utiliserez la méthode set de l'objet Map pour ajouter des valeurs à un Map.
 
 ```js
 jedi.set('firstName', 'Luke')
@@ -310,35 +288,4 @@ Soit la chaîne de caractères suivantes, récupérez tous les numériques de ce
 const phrase = '8790:bonjour le monde:8987:7777:Hello World:9007';
 ```
 
-## Exercice Population intérêts et analyse de données
-
-En utilisant les données ci-dessous 
-
-1. Comptez tous les docteurs.
-
-2. Récupérez les noms des développeurs fullstack.
-
-3. Récupérez les noms des personnes qui n'ont jamais travaillés.
-
-4. Etudiez les mots de passe des personnes et comptez les occurences des chacune des lettres distinctes dans les mots de passe.
-
-5. (Facultatif) Sélectionnez les personnes qui ont des mots de passe avec un nombre de lettre très différents, chaque mot de passe fait exactement 9 caractères. Puis, repérez les/le mot(s) de passe qui contiennent/contient un double 00. Y-a-t-il des mots de passe identique ? Si oui précisez le nom des personnes possédant ces mots de passe.
-
-```js
-const populations = [
-  { id: 0, name: "Alan", jobs = ['dev junior', 'dev fullstack'], password : "tyeedsa00" },
-  { id: 1, name: "Albert", jobs = [ 'doctor'], password : "tyeidii00" },
-  { id: 2, name: "Jhon" , jobs = ['mathematician', 'doctor'], password : "xyuuuoi00"},
-  { id: 3, name: "Brice", jobs = ['dev fullstack'] , password : "xytoiab00"},
-  { id: 4, name: "Alexendra", jobs = ['dentist'],  password : "aaaoiab00" },
-  { id: 5, name: "Brad" },
-  { id: 6, name: "Carl" , jobs = ['lead dev', 'dev fullstack']},
-  { id: 7, name: "Dallas" , jobs = [ 'dev fullstack']},
-  { id: 8, name: "Dennis", jobs = ['integrator', 'dev fullstack'] },
-  { id: 9, name: "Edgar", jobs = ['mathematician'] },
-  { id: 10, name: "Erika", jobs = ['computer scientist', 'mathematician'] },
-  { id: 11, name: "Isaac", jobs = ['doctor'], password : "Axgkj00Kl" },
-  { id: 12, name: "Ian", password : "Axgkj00Kl" },
-];
-
-```
+D'autre structure de données existe en JS comme les WeakSet, WeakMap par exemple. Nous vous invitons, pour approfondir vos connaissances, à les découvrir sur la documentation devlopper.mozilla.org.
