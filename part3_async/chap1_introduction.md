@@ -12,9 +12,7 @@ Il n'y a pas de parallèlisme en JS, tout est géré dans le même thread.
 
 ![task queue](images/async.png)
 
-\newpage
-
-Par exemple, lorsque vous faites un appel réseau (API), vous pouvez fournir à une fonction asynchrone une fonction de callback qui sera exécutée dans la stack d'éxecution qu'une fois la réponse de l'API effectuée, sans bloquer le reste du code.
+Par exemple, lorsque vous faites une requête sur une API, vous pouvez fournir à une fonction asynchrone une fonction de callback qui sera exécutée dans la stack d'éxecution une fois la réponse consommée, sans bloquer le reste du code.
 
 Remarques : il peut y avoir plusieurs Task Queue, par exemple le navigateur peut **prioriser** certaines actions asynchrones. Par défaut dans une Task Queue les callbacks sont en mode FIFO (first in first out ou premier entrée premier exécuté).
 
