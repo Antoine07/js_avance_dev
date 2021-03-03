@@ -8,7 +8,7 @@ Exécution du code de manière différée. Il permet également de gérer des ac
 
 Ce mécanisme constitue le coeur de JS.
 
-Attention, ne condondez pas, il n'y a pas de parallèlisme dans l'exécution du code JS. Tout est géré dans un seul et unique thread d'exécution.
+Il n'y a pas de parallèlisme en JS, tout est géré dans le même thread.
 
 ![task queue](images/async.png)
 
