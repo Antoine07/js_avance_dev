@@ -181,27 +181,33 @@ fs.readFile('./data/dragons.json', { encoding: 'utf8' }, (err, data) => {
 
 3. Quel est le nom du dragon le plus jeune ? Faite un script pour répondre à cette question.
 
-4. Récupérez les dragons et ordonnées les par age décroissant.
+4. Récupérez les dragons et ordonnez les par age décroissant.
 
-### Exercice relationships dragons
+### Exercice relationships dragons (**)
 
-Vous avez un deuxième fichier relationship.json qui contient contient les relations des dragons entre eux.
+Vous avez un deuxième fichier relationship.json qui contient les relations des dragons entre eux.
 
 En utilisant exclusivement les promesses, créez un tableau ou Map dans lequel vous placerez le nom des amis directs de chaque dragon.
 
-### Exercice fibonacci async
+### Exercice fibonacci async (**)
 
 Ecrivez un script qui retourne toutes les 500ms les nombres successifs de la suite de Fibonacci.
+
+```js
+
+1 1 2 3 5 8 13 21 34 ...
+
+```
 
 Essayez maintenant d'encapsuler votre code dans une Promesse, que constatez-vous ?
 
 ### Exercice algorithmique (**)
 
-Soit la matrice de valeurs munériques dans le fichier data/matrix.json. Certaines valeur(s) sur certaine(s) ligne(s) de cette matrice sont manquantes (notées None). Récupérez ces données et complétez les données manquantes en remplaçant celles-ci par la moyenne des valeurs de la ligne.
+Soit la matrice de valeurs munériques dans le fichier data/matrix.json. Certaine(s) valeur(s) sur certaine(s) ligne(s) de cette matrice sont manquantes (notées None). Récupérez ces données et complétez les données manquantes en les remplaçant par la moyenne des valeurs de la ligne.
 
 ## Async await
 
-L'opérateur **await** permet d'attendre la résolution d'une promesse, elle ne peut être utiliser qu'à l'intérieur d'une fonction **async**. L'intérêt c'est d'avoir une **logique "synchrone"** sur une partie de code asynchrone.
+L'opérateur **await** permet d'attendre la résolution d'une promesse. Il ne peut être utilisé qu'à l'intérieur d'une fonction **async**. L'intérêt c'est d'avoir une **logique "synchrone"** sur une partie de code asynchrone.
 
 ```js
 async function process(){
@@ -224,7 +230,7 @@ async function process(){
 }
 ```
 
-Une fonction async/await peut également retourner une valeur, dans ce cas vous traiterez son retour comme une promesse
+Une fonction async/await peut également retourner une valeur, dans ce cas vous traiterez son retour comme une promesse à l'aide du mot réservé then.
 
 ```js
 async function process() {
@@ -244,22 +250,25 @@ process()
 
 ### Exercice anim
 
-Soit la Promesse anim, elle retournera une valeur aléatoire composée d'un chiffre de 1 à 9 et d'une lettre comprise entre A à X. 
-Executez 10 fois ce "générateur" pour construire une chaîne aléatoire en utilisant la technique async/await décrite ci-dessus.
+Soit la Promesse anim, elle retournera une valeur aléatoire composée d'un chiffre de 1 à 9 et d'une lettre comprise entre A et X. 
+
+Executez 10 fois ce générateur pour construire une chaîne aléatoire en utilisant la technique async/await décrite ci-dessus.
 
 ### Exercice fibonacci async
 
-Reprendre l'exercice précédent et utilisez l'async/await pour calculer la nème valeur de la suite de Fibonacci.
+Reprenez l'exercice précédent et utilisez l'async/await pour calculer les valeurs de la suite de Fibonacci.
 
 ### Exercice fetch 
 
-Nous allons utilisez fetch dans un fichier JS en installant un module Node :
+Nous allons utiliser fetch dans un fichier JS en installant un module Node :
 
 ```bash
 npm install node-fetch
 ```
 
-Utilisez fetch pour récupérer les users à l'adresse suivante, puis récupérez : les noms et coordonnées GPS si il existe de chaque user dans un Map. Affichez les résultats dans un console.log, puis enregistrez les données dans un fichier en utilisant fs que nous avons déjà utiliser.
+1. Utilisez fetch pour récupérer les utilisateurs. Vous enregistrerez les noms et coordonnées GPS dans une structure de données.
+
+2. Enregistrez ces données dans un fichier à part en utilisant le module fs.
 
 ```js
 
