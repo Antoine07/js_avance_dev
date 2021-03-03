@@ -1,4 +1,64 @@
-# Introduction
+# JS rappel des fondamentaux
+
+## Sommaire
+
+* [Introduction & histoire de JS](#chapter1)
+* [Notion de type en JS](#chapter2)
+* [Les différents types en JS1](#chapter3)
+  * [Types primitifs](#section31)
+  * [Les types Objects](#section32)
+  * [Ce qui est considéré comme faux en JS](#section33)
+  * [ Evaluations courcircuit](#section34)
+  * [Les chaînes de caractères Interpolation](#section35)]
+
+* [Portée (ou scope en Anglais) des variables en JS](#chapter4)
+  * [Remonter des scopes](#section41)
+  * [Exercice scope calcul (sans coder) ](#section42)
+  * [Exercice TDZ (temporal dead zone) (sans coder)](#section43)
+  * [Exercice for let (sans coder)](#section44)
+* [ Déclaration d'une constante](#chapter5)
+  * [Exercice const & for](#section51)
+* [var définition obsolète !](#chapter6)
+
+* [Introduction à la notion de fonction](#chapter7)
+
+  * [Paramètres facultatif ](#section71)
+    * [ Exercice ttc ](#section711)
+  * [Syntaxe par décomposition](#section72)
+    * [Exercice fonction ttc spread operator](#section721)
+  * [littéral pour définir des paramètres](#section73)
+  * [this dans le contexte de l'appel d'une fonction sur un objets](#section74)
+  * [Déclaration de fonction](#section75)
+    * [Exercice function & expression](#section751)
+    * [Exercice déclaration d'une fonction](#section752)
+  * [L'objet arguments et paramètres d'une fonction](#section76)
+
+  * [Les fonctions fléchées ](#section77)
+  * [Fonction constructeur](#section78)
+  * [Exercice de synthèse corrigé un effet de bord](#section79)
+  * [Introduction à la notion de prototype pour une fonction](#section7100)
+    * [(Application) Ajouter une propriété sur un constructeur](#section7101)
+
+    * [Exercice prototype average pour la fonction User](#section7102)
+
+* [Quelques fonctions JS utiles pour le traitement des données](#chapter8)
+
+  * [La fonction JS map](#section81)
+    * [Exercice puissance 3](#section8101)
+    * [Exercice max](#section8102)
+    * [Exercice reduce sum impair](#section8103)
+    * [Exercice fonction map sur un littéral](#section8104)
+
+* [Affectation par décomposition](#chapter9)
+  * [Exercice permutations](#section91)
+  * [Exercice assigner par décomposition](#section92)
+  * [Exercice iterate destructuring](#section93)
+
+* [Le spread operator](#chapter10)
+  * [Exercice push value ](#section101)
+  * [Nom de propriété calculé et décomposition](#section102)
+
+## Introduction & histoire de JS <a class="anchor" id="chapter1"></a>
 
 JS première version 1995, auteur Brendan Eich.
 
@@ -27,7 +87,7 @@ JS suit la norme **ECMAScript**, standard que suivent certains langages de scrip
 
 Une version majeure d'ECMAScript est celle qui a été définie en 2015 : ES2015 que l'on appelle ES6. Le nom de la version étant déterminé par la dernière version du standard en cours donc ES6 pour 2015. Aujourd'hui la dernière version officielle est EMACScript 2020.
 
-## Typage
+## Notion de type en JS <a class="anchor" id="chapter2"></a>
 
 Bien que JS soit un langage faiblement typé, JS type toutes ses variables.
 
@@ -52,11 +112,11 @@ let username;
 console.log(typeof username); // undefined
 ```
 
-## Les différents types en JS
+## Les différents types en JS <a class="anchor" id="chapter3"></a>
 
 On distingue les types suivants en Javascript. Attention, tous les types primitifs définissent des valeurs non modifiables (immuables).
 
-### 1. Types primitifs
+### Types primitifs <a class="anchor" id="section31"></a>
 
 - boolean
 
@@ -98,7 +158,7 @@ let message = "Hello World";
 
 ------
 
-### 2. Les types Objects
+### Les types Objects <a class="anchor" id="section32"></a>
 
 Ils sont mutables, on peut modifier la valeur d'un objet. Un objet est une valeur conservée en mémoire à l'aide d'une référence unique.
 
@@ -109,12 +169,8 @@ Dans la liste des objets vous avez :
 ```js
 class Model {
 
-  constructor(name) {
-    this.name = name;
-  }
-
   get() {
-    return this.name;
+    return "table";
   }
 }
 
@@ -162,7 +218,77 @@ console.log(ensemble);
 
 - Les JSON Javascript Object Notation
 
-## Portée (ou scope en Anglais) des variables en JS
+## Ce qui est considéré comme faux en JS <a class="anchor" id="section33"></a>
+
+0, NaN, undefined, false, "", '', \`\`, null
+
+*Notez que tout le reste n'est pas considérer comme faux. Tout ce qui a une valeur est donc considérée comme vraie.*
+
+## Evaluations courcircuit  <a class="anchor" id="section34"></a>
+
+- Dans le cas où user n'est pas défini avec le connecteur ET 
+
+```js
+false && user 
+```
+- Avec un OU
+
+```js
+true || user
+```
+
+## Les chaînes de caractères Interpolation  <a class="anchor" id="section35"></a>
+
+Vous pouvez écrire des chaînes de caractères sur plusieurs lignes et insérer des expressions JS qui seront évaluées à l'aide de backquotes (accent grave).
+
+Exemple
+
+```js
+let a = 51;
+let b = 90;
+console.log("Somme " + (a + b) + " et\n multiplication " + a * b + ".");
+```
+
+Avec les backquotes on aura une expression plus facile à écrire :
+
+```js
+let a = 51;
+let b = 90;
+console.log(`Somme : ${a + b} et \n multiplication : ${a * b}.`);
+```
+
+Exemple avec une expression JS :
+
+```js
+let isLoading = true;
+const message = `Data is ${isLoading ? 'loading...' : 'done!'}`;
+```
+
+Remarque sur la syntaxe ternaire, pour écrire une condition sur une ligne :
+
+```js
+
+console.log( true ? 'yes' : 'no'; ); // yes
+console.log( false ? 'yes' : 'no'; ); // no
+
+```
+
+Les ternaires sont également très pratiques pour assigner des valeurs avec une condition :
+
+```js
+logged = true ? 'yes' : 'no'; ; // yes
+
+logeed =  false ? 'yes' : 'no'; ; // no
+
+```
+
+Vous pouvez enchaîner les ternaires mais, attention à la lisibilité.
+
+```js
+logged = true ? ( true ? 'toujours yes' : 'no' )  : 'no'; ; // toujours yes
+```
+
+## Portée (ou scope en Anglais) des variables en JS <a class="anchor" id="chapter4"></a>
 
 Définition let :
 **La variable définie avec let a une portée scopée au niveau du bloc dans lequel elle a été déclarée.**
@@ -199,7 +325,7 @@ foo();
 console.log(a);
 ```
 
-### Remonter des scopes
+### Remonter des scopes <a class="anchor" id="section41"></a>
 
 JS cherche la définition de ses variables dans le scope courant et sinon il remonte les scopes. Si la variable n'est définie dans aucun des scopes, alors une erreur **ReferenceError** est levée.
 
@@ -240,7 +366,7 @@ function baz() {
 baz();
 ```
 
-## Exercice scope calcul (sans coder)
+### Exercice scope calcul (sans coder)  <a class="anchor" id="section42"></a>
 
 Est ce que le code qui suit vous semble correcte ? Répondre sans exécuter le code. Si ce dernier n'est pas valide modifiez-le afin qu'il puisse s'exécuter correctement.
 
@@ -266,7 +392,7 @@ calcul();
 
 ```
 
-## Exercice TDZ (temporal dead zone) (sans coder)
+### Exercice TDZ (temporal dead zone) (sans coder) <a class="anchor" id="section43"></a>
 
 Est ce que le code qui suit vous semble correcte ? Répondez sans exécuter le code.
 
@@ -280,7 +406,7 @@ function tdz() {
 tdz();
 ```
 
-## Exercice for let (sans coder)
+### Exercice for let (sans coder) <a class="anchor" id="section44"></a>
 
 Est ce que le code qui suit vous semble correcte ? Répondez sans exécuter le code.
 
@@ -303,7 +429,7 @@ for (let j = 0; j < 10; j++) {}
 console.log(j);
 ```
 
-## Déclaration d'une constante
+## Déclaration d'une constante <a class="anchor" id="chapter5"></a>
 
 Définition :
 **La variable définie avec const a une portée scopée au niveau du bloc dans lequel elle a été déclarée.**
@@ -342,7 +468,7 @@ let newStudents = ["Alice"];
 STUDENTS = newStudents;
 ```
 
-## Exercice const & for
+### Exercice const & for <a class="anchor" id="section51"></a>
 
 1. Pouvez-vous utiliser à votre avis le mot réservé const dans la boucle suivante ?
 
@@ -357,7 +483,7 @@ const STUDENTS = ["Alan", "Bernard", "Jean"];
 ```
 
 
-### var définition
+## var définition obsolète ! <a class="anchor" id="chapter6"></a>
 
 **Ce mot clé pour définir une variable ne doit plus être utilisé, utilisez let à la place.**
 
@@ -389,11 +515,12 @@ function bar() {
 bar(); //  2 10
 ```
 
-## Fonction
+
+## Introduction à la notion de fonction <a class="anchor" id="chapter7"></a>
 
 Une fonction en JS est un objet.
 
-### Paramètres par défaut (facultatif)
+### Paramètres facultatif <a class="anchor" id="section71"></a>
 
 ```js
 function add(a, sup = 1) {
@@ -406,7 +533,7 @@ add(10, 0); // affiche 10
 
 ```
 
-### Exercice ttc
+#### Exercice ttc <a class="anchor" id="section711"></a>
 
 1. Créez une fonction qui permet de calculer un prix TTC connaissant un prix HT. Donnez une valeur de 20% par défaut pour la TVA.
 
@@ -425,7 +552,7 @@ ttc(100.50, "hello"); // Erreur de type
 ttc("100", ".3"); // 130
 ```
 
-## Syntaxe par décomposition
+### Syntaxe par décomposition <a class="anchor" id="section72"></a>
 
 Si vous avez une fonction avec de nombreux paramètres ou des paramètres variables, utilisez le spread operator pour passer les valeurs à la fonction :
 
@@ -439,7 +566,7 @@ let numbers = [1, 2, 3];
 sum(...numbers); // sum(1, 2, 3) unpacking
 ```
 
-### Exercice sum spread TTC
+#### Exercice fonction ttc spread operator <a class="anchor" id="section721"></a>
 
 Ecrivez une fonction **sumTTC** qui prend 3 nombres arbitraires de prix HT et retourne la somme de ces prix TTC. La TVA est  un paramètre facultatif (20%).
 Vérifiez que le type des variables passées en paramètre ne posent pas de problème, utilisez **parseFloat**. Affichez les résultats avec au plus 2 chiffres après la virgule.
@@ -457,7 +584,7 @@ const badPriceHT = [100.50, "hello", 55.7];
 console.log(sumTTC(...badPriceHT, .3));
 ```
 
-### littéral pour définir des paramètres
+### littéral pour définir des paramètres <a class="anchor" id="section73"></a>
 
 Vous pouvez utiliser la syntaxe suivante pour définir les paramètres d'une fonction. Dans ce cas vous n'avez pas à vous soucier de l'ordre des paramètres passé à la fonction.
 
@@ -471,7 +598,7 @@ baz({ b: 2, a : 1}); // 1 2
 
 ```
 
-## Le point sur le this des objets
+### this dans le contexte de l'appel d'une fonction sur un objet <a class="anchor" id="section74"></a>
 
 Le this d'un objet est déterminé par la manière dont vous allez appeler l'objet "contexte".
 
@@ -516,7 +643,7 @@ Pour corriger ce problème il faut écrire :
 setTimeout(() => o1.f1() , 1000); // ici setTimeout appel la fonction f1.
 ```
 
-## Fonction & fonction fléchée
+### Déclaration de fonction <a class="anchor" id="section75"></a>
 
 En JS vous avez des fonctions déclarées et des expressions de fonction.
 
@@ -536,7 +663,7 @@ setTimeout( function (){
 })
 ```
 
-### Exercice function & expression
+#### Exercice function & expression <a class="anchor" id="section751"></a>
 
 Nommez les types de fonction ci-dessous :
 
@@ -553,7 +680,7 @@ Les fonctions déclarées sont définies dès le début du script ou de la fonct
 
 Les expressions de fonction sont définies après leur évaluation.
 
-### Exercice déclaration
+#### Exercice déclaration d'une fonction <a class="anchor" id="section752"></a>
 
 *Sans exécuter le code.* 
 
@@ -577,7 +704,7 @@ const myFunc = function(){
 }
 ```
 
-### Arguments d'une fonction
+### L'objet arguments et paramètres d'une fonction <a class="anchor" id="section76"></a>
 
 Vous n'êtes pas obligé de renseigner le nombre d'argument(s) d'une fonction en JS. La fonction possède en interne une propriété **arguments** qui récupère les paramètres de la fonction, attention arguments n'est pas un tableau :
 
@@ -612,7 +739,7 @@ console.log( sum(1,2,3,5) ); // 11
 
 ```
 
-### Les fonctions fléchées
+### Les fonctions fléchées <a class="anchor" id="section77"></a>
 
 Les fonctions fléchées (arrow function) permettent d'avoir une syntaxe plus courte pour définir facilement des fonctions de rappel. On les utilise dans les fonctions JS telles que map, reduce, filter, ...
 
@@ -671,6 +798,8 @@ const School = {
 School.sayHello();
 School.sayHelloArrowFunc();
 ```
+
+### Fonction constructeur  <a class="anchor" id="section78"></a>
 
 Une fonction classique peut définir un constructeur, **pas une fonction flèchée**. Par convention le nom de la fonction commencera par une majuscule :
 
@@ -733,7 +862,7 @@ const Model = {
 Model.subModel(); // this objet Model
 ```
 
-### Exercice effet de bord
+### Exercice de synthèse corrigé un effet de bord <a class="anchor" id="section79"></a>
 
 Comment éviter l'effet de bord sur la propriété this (undefined) dans le code suivant? Proposez une solution.
 
@@ -748,7 +877,7 @@ const log = {
 setTimeout(log.save, 500);
 ```
 
-### prototype d'une fonction 
+### Introduction à la notion de prototype pour une fonction  <a class="anchor" id="section7100"></a>
 
 ```js
 
@@ -769,7 +898,7 @@ Student.__proto__
 
 Vous pouvez dès lors appeler des méthodes, qui ne sont pas directement héritées dans l'objet Student.
 
-### Comment ajouter une propriété sur un constructeur
+#### (Application) Ajouter une propriété sur un constructeur <a class="anchor" id="section7101"></a>
 
 Reprenons l'exemple précédent, nous allons voir comment ajouter une propriété au constructeur User qui sera partagée par toutes ses instances :
 
@@ -792,7 +921,7 @@ User.prototype.fullName = function (){
 console.log(u1.fullName()); // Alan Phi
 ```
 
-### Exercice prototype
+#### Exercice prototype average pour la fonction User <a class="anchor" id="section7102"></a>
 
 Ajoutez la possibilité de définir l'âge dans la fonction constructeur User. Modifiez pour toutes les instances de User la fonction fullName pour qu'elle affiche le name, le fullName et l'âge d'un user.
 
@@ -811,7 +940,9 @@ Quand JS appelle cette méthode il ne la trouvera pas dans l'instance de User ma
 
 JS possède depuis **ES6** un mot clé class pour définir une classe, nous verrons qu'en fait ce mot clé permet de définir, comme dans l'exemple précédent, un constructeur.
 
-## Fonctions fléchées et fonction de rappel dans les tableaux
+## Quelques fonctions JS utiles pour le traitement des données  <a class="anchor" id="chapter8"></a>
+
+### La fonction JS map <a class="anchor" id="section81"></a>
 
 Vous pouvez utiliser une fonction fléchée sur des collections en utilisant des fonctions comme map, filter ou reduce par exemple :
 
@@ -822,7 +953,7 @@ const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const powerNumber = numbers.map( number => number ** 2);
 ```
 
-### Exercice puissance 3
+#### Exercice puissance 3 <a class="anchor" id="section8101"></a>
 
 Soit numbers une liste de nombres entiers, élevez uniquement à la puissance 3 les nombres pairs.
 
@@ -858,11 +989,11 @@ numbers.reduce((acc, curr) => curr + acc, 100);
 // 155
 ```
 
-### Exercice max
+#### Exercice max <a class="anchor" id="section8102"></a>
 
 Reprenez l'objet numbers (array) de numériques et utilisez la méthode reduce pour calculer le max.
 
-### Exercice reduce sum impair
+#### Exercice reduce sum impair <a class="anchor" id="section8103"></a>
 
 Faites la somme des nombres impairs en utilisant la fonction reduce des valeurs suivantes :
 
@@ -870,7 +1001,7 @@ Faites la somme des nombres impairs en utilisant la fonction reduce des valeurs 
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 ```
 
-### Exercice fonction map
+#### Exercice fonction map sur un littéral <a class="anchor" id="section8104"></a>
 
 Utilisez la fonction map pour calculer le prix TTC des téléphones. Utilisez une fonction fléchée.
 
@@ -882,27 +1013,7 @@ const phones = [
 ];
 ```
 
-### Exercice counter arrow
-
-Corrigez le code (ES5) suivant afin que le compteur s'incrémente correctement.
-
-```js
-// ES5
-const CounterV1 = {
-  count: 0,
-  // la fonction callback function reçoit l'élément courant this
-  counter: function() {
-    console.log(this.count); // affiche 0
-    setInterval(function () {
-      this.count++;
-      console.log(this.count);
-    }, 1000);
-  },
-};
-CounterV1.counter();
-```
-
-## Affectation par décomposition
+## Affectation par décomposition <a class="anchor" id="chapter9"></a>
 
 Vous pouvez affecter par décomposition des variables pré-définies comme suit :
 
@@ -979,7 +1090,7 @@ infoStudent(student);
 const infoStudent_bis = ({ note, mention }) => "info : " + mention + "note : " + note;
 ```
 
-### Exercice permutations
+### Exercice permutations <a class="anchor" id="section91"></a>
 
 - Permutez les valeurs a et b suivantes :
 
@@ -997,7 +1108,7 @@ let a = 1, b = 2;
 let a = 1, b = 2, c = 4;
 ```
 
-### Exercice assigner par décomposition
+### Exercice assigner par décomposition  <a class="anchor" id="section92"></a>
 
 1. Calculez la moyenne des notes de l'étudiant. Modifiez la référence du littéral.
 
@@ -1016,7 +1127,7 @@ let student = {
 console.log(name, notes, average);
 ```
 
-### Exercice iterate destructuring
+### Exercice iterate destructuring  <a class="anchor" id="section93"></a>
 
 Affichez le nom et le nom de la soeur de chaque étudiant en utilisant une boucle for of dans le littéral students :
 
@@ -1045,7 +1156,7 @@ const students = [
 ];
 ```
 
-## spread operator
+## Le spread operator <a class="anchor" id="chapter10"></a>
 
 Vous pouvez effectuer une fusion des deux tableaux en JS à l'aide de l'opérateur spread :
 
@@ -1092,7 +1203,7 @@ const newState = { ...state, email: "sophie@sophie.fr" };
 // {name: "", age: 25, email: "sophie@sophie.fr"}
 ```
 
-## Exercice push value
+### Exercice push value <a class="anchor" id="section101"></a>
 
 Soient les données suivantes. Créez un tableau strNumbers et pushez-y chacune de ses valeurs.
 
@@ -1102,7 +1213,7 @@ const str1 = ["one", "two"];
 const str2 = ["three", "four"];
 ```
 
-## Nom de propriété calculé et décomposition
+### Nom de propriété calculé et décomposition <a class="anchor" id="section102"></a>
 
 Vous pouvez utiliser une variable pour définir une clé d'un littéral. Dans la syntaxe ci-dessous, il faut utiliser les crochets pour que JS interprète la variable comme une clé du littéral.
 
@@ -1201,73 +1312,24 @@ const relations = [
 ]
 ```
 
-## Interpolation
+## Exercice corrigé le code suivant 
 
-Vous pouvez écrire des chaînes de caractères sur plusieurs lignes et insérer des expressions JS qui seront évaluées à l'aide de backquotes (accent grave).
-
-Exemple
+Corrigez le code (ES5) suivant afin que le compteur s'incrémente correctement.
 
 ```js
-let a = 51;
-let b = 90;
-console.log("Somme " + (a + b) + " et\n multiplication " + a * b + ".");
-```
-
-Avec les backquotes on aura une expression plus facile à écrire :
-
-```js
-let a = 51;
-let b = 90;
-console.log(`Somme : ${a + b} et \n multiplication : ${a * b}.`);
-```
-
-Exemple avec une expression JS :
-
-```js
-let isLoading = true;
-const message = `Data is ${isLoading ? 'loading...' : 'done!'}`;
-```
-
-Remarque sur la syntaxe ternaire, pour écrire une condition sur une ligne :
-
-```js
-
-console.log( true ? 'yes' : 'no'; ); // yes
-console.log( false ? 'yes' : 'no'; ); // no
-
-```
-
-Les ternaires sont également très pratiques pour assigner des valeurs avec une condition :
-
-```js
-logged = true ? 'yes' : 'no'; ; // yes
-
-logeed =  false ? 'yes' : 'no'; ; // no
-
-```
-
-Vous pouvez enchaîner les ternaires mais, attention à la lisibilité.
-
-```js
-logged = true ? ( true ? 'toujours yes' : 'no' )  : 'no'; ; // toujours yes
-```
-
-## Ce qui est considéré comme faux en JS 
-
-0, NaN, undefined, false, "", '', \`\`, null
-
-
-## Evaluations courcircuit
-
-- Dans le cas où user n'est pas défini avec le connecteur ET 
-
-```js
-false && user 
-```
-- Avec un OU
-
-```js
-true || user
+// ES5
+const CounterV1 = {
+  count: 0,
+  // la fonction callback function reçoit l'élément courant this
+  counter: function() {
+    console.log(this.count); // affiche 0
+    setInterval(function () {
+      this.count++;
+      console.log(this.count);
+    }, 1000);
+  },
+};
+CounterV1.counter();
 ```
 
 ## Exercices supplémentaires

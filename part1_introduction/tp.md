@@ -1,6 +1,6 @@
 # TP Population intérêts et analyse de données
 
-En utilisant les données ci-dessous 
+En utilisant les données ci-dessous dans la variable populations.
 
 1. Comptez tous les docteurs.
 
