@@ -135,7 +135,6 @@ Reprenez l'exercice précédent avec la fonction **add** mais cette fois-ci util
 
 Vous pouvez également lancer plusieurs promesses en même temps. Elles seront avec la méthode all toutes résolues. Si l'une d'entre elles échoue tout s'arrêtera.
 
-
 ```js
 const p = number => ( new Promise((resolve, reject) => {
   setTimeout(() => {
@@ -157,7 +156,9 @@ Promise.all([p(1), p(2), p(3)]).then(numbers => {
 
 ### Exercice read json dragon
 
-Vous allez utiliser un module node "fs" qui permet de lire un fichier, voici une syntaxe de base pour lire un fichier, récupérez le fichier data/dragons.json sur le serveur et testez le code ci-dessous :
+Vous allez utiliser un module node "fs" qui permet de lire un fichier. 
+
+Récupérez le fichier data/dragons.json sur le serveur et testez le code ci-dessous :
 
 ```js
 const fs = require('fs');
