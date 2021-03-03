@@ -32,7 +32,7 @@ console.log("End");
 
 ```
 
-## Exemples de code asynchrone ...
+## Exemples de code asynchrone 
 
 ```js
 console.log('Start');
@@ -44,7 +44,7 @@ console.log('End');
 
 ## Exercice login callback
 
-Soit le programme asynchrone login suivant. Que vaut à votre avis la variable email dans le script ?
+Soit le programme asynchrone login suivant. Que vaut à votre avis la variable email dans le script ? Répondez sans exécuter le code.
 
 ```js
 
@@ -59,7 +59,7 @@ console.log(email);
 
 ```
 
-Ajoutez une fonction de callback afin de récupérer la valeur de l'email une fois l'utilisateur connecté (...)
+Ajoutez une fonction de callback afin de récupérer la valeur de l'email une fois l'utilisateur "connecté".
 
 ```js
 const login = (email, password, callback ) => {
@@ -81,7 +81,7 @@ const add = (number, callback) => {
 }
 ```
 
-Ajoutez maintenant une fonction de callback **error** cette fonction sera appelée uniquement si on passe à la fonction add une valeur qui n'est pas un nombre. Vous testerez la fonction d'erreur.
+Ajoutez maintenant une fonction de callback **error**. Cette fonction sera appelée uniquement lorsqu'une valeur passée en paramètre n'est pas un nombre.
 
 2. Améliorez la fonction d'erreur en levant une exception.
 
