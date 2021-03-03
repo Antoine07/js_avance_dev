@@ -1,6 +1,6 @@
 # Introduction
 
-Les classes ont été introduites avec ECMAScript2015. Attention, certaines propriétés sont encore en mode expérimental et ne sont pas implémentées dans tous les navigateurs. Vous trouverez ici un tableau de compatibilités pour les navigaeurs : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes#compatibilit%C3%A9_des_navigateurs
+Les classes ont été introduites avec ECMAScript2015. Attention, certaines propriétés sont encore en mode expérimentale et ne sont pas implémentées dans tous les navigateurs. Vous trouverez ici un tableau de compatibilités pour les navigaeurs : https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Classes#compatibilit%C3%A9_des_navigateurs
 
 ## Définition
 
@@ -8,9 +8,9 @@ Les classes sont des fonctions spéciales en JS. C'est un sucre syntaxique. Elle
 
 ### Généralités sur la notion de classe
 
-On utilise le mot clé **class** suivi du nom de la classe elle-même pour la définir. La classe est un modèle à partir duquel on peut créer autant d'objets qu'on le souhaite, appelés **instances**. Pour créer une nouvelle instance, on utilise le mot-clé new suivi du nom de classe.
+On utilise le mot réservé **class** suivi du nom de la classe elle-même pour la définir. La classe est un modèle à partir duquel on peut créer autant d'objets qu'on le souhaite, appelés **instances**. Pour créer une nouvelle instance, on utilise le mot-clé new suivi du nom de classe.
 
-Lors de l'instanciation avec le mot-clé new, une méthode spéciale de la classe est appelée, le **constructeur**. En JS, le constructeur porte le nom réservé constructor, et les **attributs (ou propriétés)** de la classe y sont définis. On attache les attributs à l'instance de classe à l'aide du mot clé this :
+Lors de l'instanciation avec le mot-clé new, une méthode spéciale de la classe est appelée le **constructeur**. En JS, le constructeur porte le nom réservé constructor, et les **attributs (ou propriétés)** de la classe y sont définis. On attache les attributs à l'instance de classe à l'aide du mot clé this :
 
 ```js
 class Rectangle{
@@ -33,7 +33,7 @@ const unAutreRectangle = new Rectangle(20, 35);
 
 Contrairement à d'autres langages comme PHP, JS n'implémente pas de visibilité private (...pas avant ES2019 en tout cas !), tous les attributs et toutes les méthodes sont accessibles dans le script courant. On peut toutefois faire "comme si" une propriété était privée, ne la manipuler directement que depuis l'intérieur de la classe, et définir des accesseurs **setter** et **getter** pour y accéder en écriture et en lecture. Il faudra cependant faire attention au nom de ces attributs dans la classe, une technique classique consiste à préfixer leurs noms par un underscore.
 
-Par exemple dans le code qui suit, la propriété se nomme _table, mais le code principal est écrit comme si on accédait à une propriété table (sans underscore). Ce sont en fait nos accesseurs qui sont appelés :
+On définira les propriétés "privées" en les préfixants d'un enderscore. Elles seront appelées, une fois les setter et getter définies, dans le script courant sans l'enderscore et seront traitées comme des variables attachés à l'objet.
 
 ```js
 class Model{
