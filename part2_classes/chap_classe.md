@@ -196,7 +196,7 @@ Dans un seul et même fichier un dragon et un chevalier s'affrontent en se porta
 
 Lorsqu'un des deux adversaire n'a plus de vie la partie est terminée et le vainqueur est celui qui possède encore de la vie. 
 
-Les classe Dragon et Knight auront :
+Les classe Dragon et Knight auront les propriétés et méthodes suivantes :
 
 **Attributs**
 
@@ -218,13 +218,13 @@ La classe **Game** aura les attributs et méthode suivantes :
 
 - run() <- méthode qui lancera le jeu (boucle de jeu)
 
-Indications : voici un schéma pour vous aidez à implémenter le code (écrire le code dans le fichier) :
+Indications : voici un schéma pour vous aidez à implémenter le code :
 
 ![schéma](images/schema_game.png)
 
 ## Méthodes privées (expérimentales)
 
-Vous pouvez définir des attributs privés dans une classe JS de la manière suivante, ces attributs ne seront accessibles qu'à l'intérieur de la classe. Attention, les champs ou attributs privés doivent être déclarés en premier dans la déclaration des champs.
+Vous pouvez définir des attributs privés dans une classe JS de la manière suivante; ces attributs ne seront accessibles qu'à l'intérieur de la classe. Attention, les champs ou attributs privés doivent être déclarés en premier dans la déclaration des champs.
 
 ```js
 class Rectangle {
