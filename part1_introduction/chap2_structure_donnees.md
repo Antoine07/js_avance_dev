@@ -22,12 +22,12 @@ newFruits.push('Banana')
 console.log(newFruits.length === fruits.length)
 ```
 
-2. Ecrivez un script pour créez un nouveau tableau newFruit qui n'a pas la même référence que fruits.
+2. Ecrivez un script pour créer un nouveau tableau newFruits qui n'a pas la même référence que le tableau fruits.
 
 
-## Exercice copie de population
+## Exercice populations
 
-- 1. Parcourez le tableau suivant et ajoutez un champ countA qui compte le nombre d'occurence de a dans les noms de la population. Utilisez un for of.
+- 1. Parcourez le tableau populations et ajoutez un champ count qui compte le nombre d'occurence(s) de a et l dans les noms. Utilisez un for of.
 
 ```js
 
@@ -46,14 +46,13 @@ const populations = [
     { "id": 11, "name": "Isaac" },
     { "id": 12, "name": "Ian" }
 ];
-
 ```
 
-- 2. Ordonnez maintenant le tableau par ordre croissant de nombre de a dans les noms.
+- 2. Ordonnez maintenant le tableau par ordre croissant de nombre de a et l dans les noms.
 
 ## Fonction map
 
-La méthode map permet de parcourir un tableau et d'exécuter une fonction pour chaque élément du tableau. Elle retournera un nouveau tableau.
+La méthode map permet de parcourir un tableau et d'exécuter une fonction pour chaqu'un de ses éléments. Elle retournera un nouveau tableau.
 
 ```js
 const sheeps = ['🐑', '🐑', '🐑'];
@@ -72,7 +71,7 @@ const positions = [[1,1], [2, 2], [3, 4.5], [0, 9]];
 const distances = [];
 ```
 
-Rappelons comment on effectue le calcul de la distance avec une précision de deux chiffres après la virgule.
+Rappelons comment on effectue le calcul de la distance avec une précision de deux chiffres après la virgule :
 
 ```js
 const X = [1,2];
@@ -85,11 +84,11 @@ const d = Math.floor( Math.square( (X[0] - B[0] )**2 + (X[1] - B[1] )**2 ) * 100
 
 1. Inversez la chaîne de caractères sentence ci-après.
 
-2. Comptez la longueur de chaque mot.
+2. Comptez le nombre de caractères de chaque mot.
 
-3. Faites un script qui prend en argument message (texte) et qui retourne un tableau des valeurs du nombre de caractères de chaque mot. Vous ne compterez pas les esapces comme un caractère.
+3. Faites un script qui prend en argument une phrase et qui retourne dans un tableau le nombre de caractères de chaque mot. Vous ne compterez pas les espaces comme un caractère.
 
-Indication : utilisez la méthode split pour transformer la chaîne en tableau.
+Indication : utilisez la méthode split pour transformer la chaîne de caractères en tableau.
 
 ```js
 const sentence = "Bonjour tout le monde, vous aimez JS ?";
@@ -97,7 +96,7 @@ const sentence = "Bonjour tout le monde, vous aimez JS ?";
 
 ## Structure de données Map
 
-Un objet Map est une collection de paires clé/valeur qui peut utiliser n'importe quel type de données comme clé.
+Un objet Map est une collection de paires clé/valeur qui peut utiliser n'importe quel type de valeur pour sa clé.
 
 ```js
 const jedi = new Map()
@@ -106,7 +105,7 @@ const jedi = new Map()
 
 ### Ajout de valeurs dans un Map 
 
-Vous utiliserez la méthode set de l'objet Map pour ajouter des valeurs à un Map.
+Vous utiliserez la méthode set de l'objet Map pour ajouter des valeurs.
 
 ```js
 jedi.set('firstName', 'Luke')
@@ -114,7 +113,7 @@ jedi.set('lastName', 'Skywalker')
 jedi.set('job', 'Jedi Master')
 ```
 
-Vous pouvez également ajouter des valeurs dans un map à l'aide d'un tableau de tableaux:
+Vous pouvez également ajouter des valeurs dans un map à l'aide d'un tableau de tableaux :
 
 ```js
 const jedi = new Map([
@@ -124,7 +123,7 @@ const jedi = new Map([
 ])
 ```
 
-Quelques fonctions utiles sur les maps :
+Exemple de quelques fonctions utiles :
 
 ```js
 
@@ -134,7 +133,7 @@ jedi.has('shark') // false
 // accéder à une valeur à partir de sa clé
 jedi.get('firstName')
 
-// taille du map
+// taille du Map
 jedi.size
 
 // supprimer un élément
@@ -168,17 +167,17 @@ jedi.forEach(( v, k ) =>  console.log(v, k));
 
 ### Exercice average Map 
 
-1. En utilisant les données DataStudents ci-dessous, créez un Map puis calculer la moyenne de chaque étudiant. Vous utiliserez la clé average du tableau DataStudents et la moyenne sera donnée à 2 décimales prêts après la virgule.
+1. En utilisant les données DataStudents et la clé average, créez un Map puis calculez la moyenne de chaque étudiant. Les valeurs seront données avec une précision de deux décimales après la virgule.
 
-Mettez à jour la mention en fonction de la moyenne obtenue, voir la clé mention dans les données ci-dessous. Pour les différentes moyennes vous utiliserez le code de mentions suivant :
+2. Mettez à jour la mention en fonction de la moyenne obtenue, voir la clé mention dans les données. Pour les différentes moyennes vous utiliserez le code d'attribution de la mentions suivant :
 
 - TB pour 17 à 20
 - B pour 14 à 16
 - AB pour 12 à 13
 - P pour 10 à 11
-- Pour les autres cas mettre aucune mention.
+- Pour les autres cas ne mettre aucune mention.
 
-2. Créez un script qui permet d'ajouter un étudiant avec une clé sX ou X est un nombre, vérifiez avant l'ajout que la clé n'existe pas.
+3. Créez un script qui permet d'ajouter un étudiant avec la convention de clé suivante : sX, où X représente un nombre. Vérifiez avant l'ajout que la clé n'existe pas dans le littéral.
 
 ```js
 
@@ -282,10 +281,10 @@ Généralisez et créez maintenant une fonction qui prend en paramètre une cha�
 
 ## Exercice count digit
 
-Soit la chaîne de caractères suivantes, récupérez tous les numériques de cette chaîne dans un tableau :
+Soit la chaîne de caractères suivante, récupérez tous les numériques de cette chaîne dans un tableau :
 
 ```js
 const phrase = '8790:bonjour le monde:8987:7777:Hello World:9007';
 ```
 
-D'autre structure de données existe en JS comme les WeakSet, WeakMap par exemple. Nous vous invitons, pour approfondir vos connaissances, à les découvrir sur la documentation devlopper.mozilla.org.
+D'autres structures de données existent en JS comme les WeakSet, WeakMap par exemple. Nous vous invitons, pour approfondir vos connaissances, à les découvrir sur la documentation devlopper.mozilla.org.
