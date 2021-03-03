@@ -321,15 +321,15 @@ Dans un fichier todos, vous créez un fichier index.html avec le code suivant :
 </html>
 ```
 
-A l'aide de l'API fetch du navigateur récupérez les 3 premiers résultats en simulant un délai entre chaque valeur de 500ms.
+A l'aide de l'API fetch du navigateur, récupérez les 3 premiers résultats en simulant un délai entre chaque valeur de 500ms.
 
 ```txt
 https://jsonplaceholder.typicode.com/todos
 ```
 
-Vous afficherez le titre du todo ainsi que son état.
+Vous afficherez le titre du todo ainsi que son statut.
 
-- Utilisez async/await et créer une promesse avec un délais de 500ms entre les trois requêtes.
+- Reprendre l'exercice précédent en utilisant async/await.
 
 ```js
 
@@ -340,7 +340,7 @@ const request = async () => {
 
 ```
 
-Affichez maintenant le premier todo puis le nom du user associé (voir la clé userId), toujours avec un délais de 500ms entre chaque todo.
+Affichez maintenant le premier todo et le nom du user associé (voir la clé userId).
 
 ```js
 https://jsonplaceholder.typicode.com/users/1
