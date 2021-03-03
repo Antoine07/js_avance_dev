@@ -33,7 +33,7 @@ const unAutreRectangle = new Rectangle(20, 35);
 
 Contrairement à d'autres langages comme PHP, JS n'implémente pas de visibilité private (...pas avant ES2019 en tout cas !), tous les attributs et toutes les méthodes sont accessibles dans le script courant. On peut toutefois faire "comme si" une propriété était privée, ne la manipuler directement que depuis l'intérieur de la classe, et définir des accesseurs **setter** et **getter** pour y accéder en écriture et en lecture. Il faudra cependant faire attention au nom de ces attributs dans la classe, une technique classique consiste à préfixer leurs noms par un underscore.
 
-On définira les propriétés "privées" en les préfixants d'un enderscore. Elles seront appelées, une fois les setter et getter définies, dans le script courant sans l'enderscore et seront traitées comme des variables attachés à l'objet.
+On définira les propriétés "privées" en les préfixant d'un underscore. Elles seront appelées, une fois les setter et getter définis, dans le script courant sans l'underscore et seront traitées comme des variables attachés à l'objet.
 
 ```js
 class Model{
@@ -59,7 +59,7 @@ m.table = "POSTS";  // modifier l'attribut, l'accesseur set table est invoqué
 
 ```
 
-Les **méthodes** de classe sont des simples méthodes nommées, voyez l'exemple de la méthode **dim** ci-dessous dans la classe Rectangle :
+Les **méthodes** de classe sont des simples méthodes nommées; voyez l'exemple de la méthode **dim** ci-dessous dans la classe Rectangle :
 
 ```js
 class Rectangle{
@@ -67,6 +67,11 @@ class Rectangle{
     constructor(w, h){
         this._w = w;
         this._h = h;
+    }
+
+    // EXEMPLE DE METHODE DE CLASSE
+    dim(){
+        return `Width : ${this._w} Height : ${this._h}`;
     }
 
     // getter
@@ -82,11 +87,7 @@ class Rectangle{
      set h(h){
         this._h = h;
     }
-
-    // méthode de classe
-    dim(){
-        return `Width : ${this._w} Height : ${this._h}`;
-    }
+    
 }
 
 let r1 = new Rectangle(10, 2);
@@ -104,7 +105,7 @@ console.log(r1.dim())
 
 ## Exercice Parser
 
-Créez une classe Parser, elle permettra de parser une chaîne de caractères en fonction d’un motif. Voyez l’exemple de l’utilisation de cette classe ci-dessous avant d’implémenter le code, il faut garder les digits uniquement, les nombres dans la chaîne de caractères.
+Créez une classe Parser qui permettra de parser une chaîne de caractères en fonction d'un motif donné. Voyez l’exemple de l'utilisation de cette classe ci-dessous avant d'implémenter le code. Garder les digits uniquement ainsi que les nombres dans la chaîne de caractères.
 
 ```js
 const phrase = '8790: bonjour le monde:8987:7777:Hello World:    9007';
