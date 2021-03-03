@@ -97,11 +97,13 @@ Soit une fonction message asynchrone qui retournera une chaîne de caractères. 
 
 ## Promesse
 
-La gestion de l'asynchrone peut devenir très vite complexe si on utilise systématiquement des fonctions de callback (callback hell), comme on vient de le voir. Nous allons maintenant aborder une autre approche native au JS : les Promesses. Elles simplifient l'utilisation de méthodes asynchrones.
+La gestion de l'asynchrone peut devenir très vite complexe si on utilise systématiquement des fonctions de callback (callback hell).
 
-Une promesse a un **état initial** en attente : **pending**. Une fois **résolue** elle est dans **l'état settled**, dans ce cas son état ne change plus.
+Nous allons maintenant aborder une autre approche native au JS : les Promesses. Elles simplifient l'utilisation des méthodes asynchrones.
 
-- La méthode **then** est une méthode qui sera appelée après le succès de la promesse en cas d'échec la méthode **catch** sera appelée.
+Une promesse a un **état initial** en attente : **pending**. Une fois **résolue** elle est dans **l'état settled** et dans ce cas son état ne change plus.
+
+- La méthode **then** est une méthode qui sera appelée après le succès de la promesse; en cas d'échec la méthode **catch** sera appelée.
 
 ### Exemple de promesse
 
@@ -123,15 +125,16 @@ p(9)
 
 ```
 
-Remarques : vous pouvez enchaîner plusieurs promesses, elles seront résolues l'une à la suite de l'autre.
+Remarque : vous pouvez enchaîner plusieurs promesses, elles seront résolues l'une à la suite de l'autre.
 
 ## Exercice add avec des promesses
 
-Reprennez l'exercice précédent avec la fonction **add** mais, cette fois-ci utilisez des promesses.
+Reprenez l'exercice précédent avec la fonction **add** mais cette fois-ci utilisez des promesses.
 
 ## Promise all
 
-Vous pouvez également lancer plusieurs promesses en même temps et attendre que toutes ces promesses soient résolues ou si l'une d'entre elle échoue tout arrêter. Promise.all permet d'exécuter un ensemble de promesses :
+Vous pouvez également lancer plusieurs promesses en même temps. Elles seront avec la méthode all toutes résolues. Si l'une d'entre elles échoue tout s'arrêtera.
+
 
 ```js
 const p = number => ( new Promise((resolve, reject) => {
