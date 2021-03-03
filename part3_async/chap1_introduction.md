@@ -4,9 +4,9 @@
 
 Exécution du code de manière différée. Il permet également de gérer des actions qui "normalement" sont bloquantes. Chaque ligne est exécutée de manière synchrone, si une fonction prend du temps à s'exécuter le code synchrone attend la fin de son exécution.
 
-**JavaScript est synchrone et mono-thread**. Il n'y a qu'un seul fil d'exécution, stack, du code source, chaque ligne est exécuté de manière synchrone... Par contre les lignes asynchrones sont placées dans une file d'exécution (Task Queue). Toutes les fonctions asynchrones seront alors exécutées les unes à la suite des autres (par l'Event Loop), elles seront alors envoyées dans la stack d'exécution sans bloquer le reste de l'exécution (stack d'exécution synchrone). 
+**JavaScript est synchrone et mono-thread**. Il n'y a qu'un seul fil d'exécution, stack, du code source, chaque ligne est exécutée de manière synchrone. Par contre les lignes asynchrones sont placées dans une file d'exécution (Task Queue). Toutes les fonctions asynchrones seront alors exécutées les unes à la suite des autres par l'Event Loop. Elles seront alors envoyées dans la stack d'exécution principale sans bloquer le reste du programme.
 
-Ce mécanisme dans JS est géré par : l'Event Loop qui remet les fonctions de callback dans la stack d'exécution. Ce mécanisme constitue le coeur de JS.
+Ce mécanisme constitue le coeur de JS.
 
 Attention, ne condondez pas, il n'y a pas de parallèlisme dans l'exécution du code JS. Tout est géré dans un seul et unique thread d'exécution.
 
