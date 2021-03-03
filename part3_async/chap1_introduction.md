@@ -279,7 +279,7 @@ fetch( 'https://jsonplaceholder.typicode.com/users' )
 
 ## Exercice async/await TODOS
 
-Créez un dossier todos dans lequel vous créez un fichier index.html avec le code suivant :
+Dans un fichier todos, vous créez un fichier index.html avec le code suivant :
 
 ```html
 <!DOCTYPE html>
@@ -321,7 +321,7 @@ Créez un dossier todos dans lequel vous créez un fichier index.html avec le co
 </html>
 ```
 
-à l'aide de l'API fetch du navigateur, récupérez les 3 premiers todos à l'url suivante avec un délais entre chaque todo de 500 ms :
+A l'aide de l'API fetch du navigateur récupérez les 3 premiers résultats en simulant un délai entre chaque valeur de 500ms.
 
 ```txt
 https://jsonplaceholder.typicode.com/todos
