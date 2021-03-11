@@ -139,7 +139,7 @@ De plus vous devez faire attention à l'ordre dans lequel vous importez vos fich
 
 Cette manière d'importer ces fichiers définira un scope unique pour l'ensemble de vos variables.
 
-Nous allons voir comment on va créer un fichier "point d'entrée" qui importera l'ensemble de nos dépendances et que nous importerons dans notre page HTML.
+Pour éviter cette gestion de dépendances complexe nous allons mettre en place un fichier de type point d'entrée de l'application.
 
 Récupérez l'exemple dans le dossier HTML dans le dossier Examples.
 
