@@ -2,7 +2,7 @@
 
 ## Promesses
 
-Rappel : une promesse est un objet (de type Promise) qui permet de traiter des fonctions asynchrones. Le paramètre d'une promesse est une fonction qui ademte deux paramètres (fonctions de callback) : resolve et reject qui respectivement est appelée si le code asynchrone est un succès ou un échec.
+Rappel : une promesse est un objet (de type Promise) qui permet de traiter des fonctions asynchrones. Le paramètre d'une promesse est une fonction qui admet deux paramètres (fonctions de callback) : resolve et reject qui respectivement sont appelées si le code asynchrone est un succès ou un échec.
 
 Une fois définie la promesse est consommée, on utilise alors deux méthodes :
 
@@ -12,9 +12,9 @@ Une fois définie la promesse est consommée, on utilise alors deux méthodes :
 
 ### Exercice Comsommation d'une promesse
 
-- Ci-dessous on a définit une promesse myPromise, ré-écrivez là en utilisant uniquement des fonctions fléchées.
+- Ci-dessous on a défini une promesse myPromise, ré-écrivez la en utilisant uniquement des fonctions fléchées.
 
-Notez que même si une Promesse permet de traiter du code asynchrone vous pouvez y mettre du code synchrone comme dans l'exemple ci-dessous :
+Notez que même si une Promesse permet de traiter du code asynchrone, vous pouvez y mettre du code synchrone comme dans l'exemple ci-dessous :
 
 ```js
 function myPromise(data, state) {
@@ -47,7 +47,7 @@ myPromise([1,2,3], true)
 
 ## Exercice pile ou face 
 
-Définissez une promesse (fonction fléchée) qui affiche pile ou face (resolve), utilisez la fonction Math.random() de JS pour le lancer de pile/face. Ils se feront avec un décalage de 500ms (setTimeout) fonction asynchrone.
+Définissez une Promesse (fonction fléchée) qui affiche pile ou face (resolve), utilisez la fonction Math.random() de JS pour un lancer de pile/face. Ils se feront avec un décalage de 500ms (setTimeout) fonction asynchrone.
 
 Faites 3 lancers et définssez les paris suivants :
 
