@@ -2,7 +2,7 @@
 
 ## Définition module
 
-c'est du code métier que l'on écrit dans un fichier et qui pourra reservir dans d'autres programmes. Comme notre parser JS. Vous avez aussi des modules de la communauté des devéloppeurs qui sont publiés.
+Un module est une factorisation d'un code métier que l'on peut utiliser dans d'autres programmes. Vous pouvez définir vos propres modules ou utiliser des modules développés par la communauté JS.
 
 Nous allons vous montrer dans deux contextes différents comment faire des import/export en ES6.
 
