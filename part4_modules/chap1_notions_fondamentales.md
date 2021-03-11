@@ -25,7 +25,7 @@ InNodeJS/
     package.json
 ```
 
-Dans le contexte "NodeJS", c'est-à-dire lorsqu'on exécute nos fichiers en ligne de commande comme vu dans le cours, et pour les versions de NodeJS 14 et 12, nous devons créer un fichier **package.json** dans lequel on précise à NodeJS que l'on utilise la syntaxe ES6 pour les import et export (sinon ça ne marchera pas ...).
+Si vous utilisez les modules dans le contexte NodeJS, vous devez définir dans votre dossier de travail un fichier package.json, il faudra y définir l'utilisation de la syntaxte ES6. En effet, celle-ci vous permettra l'utilisation des imports/exports de JS.
 
 - Fichier package.json, regardez dans le dossier
 
