@@ -71,7 +71,7 @@ export const PASS = "123";
 export const sayHello = message => `Voici mon message ${messaqge}`;
 ```
 
-De manière équivalente pour l'export multiple vous pouvez utiliser la syntaxe suivante :
+De manière équivalente pour l'export multiple, vous pouvez utiliser la syntaxe suivante :
 
 ```js
 const API = "ABC123";
@@ -84,9 +84,9 @@ export { API, PASS, sayHello };
 
 ## import 
 
-Les exemples d'import sont fait dans le fichier app.js.
+Les exemples d'import sont faits dans le fichier app.js.
 
-Pour importer une constante, fonction ou classe qui a été exporté par défaut, vous pouvez dans ce cas renommer cet import, ci-dessous on a renommé la fonction parse exportée par défaut depuis le fichier core/parse.js :
+Pour importer une constante, fonction ou classe qui a été exportée par défaut, vous pouvez dans ce cas le renommer. Voyez l'exemple ci-dessous :
 
 ```js
 import parseDigit from './core/parse.js';
