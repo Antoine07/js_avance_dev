@@ -147,9 +147,9 @@ Vous devez également installer un module pour vscode, il nous permettra de lanc
 
 ![livereload](images/liveServer.png)
 
-Allez dans la partie installation de module et installez le module Live Server de Ritwick Dey.
+Allez dans la partie installation de module et installez Live Server de Ritwick Dey.
 
-Une fois installé, vous devrier voir dans la barre d'état en bas à droite de vscode un bouton "Go Live". Cliquez dessus, le live serveur lancera votre navigateur par défaut. Naviguez ensuite dans l'arborescence de vos dossiers et fichiers pour afficher la page index.html.
+Une fois installé, vous devriez voir dans la barre d'état en bas à droite de vscode un bouton "Go Live". Cliquez dessus, le live serveur lancera votre navigateur par défaut. Naviguez ensuite dans l'arborescence de vos dossiers et fichiers pour afficher la page index.html.
 
 *Remarque : le live server se lance à la racine de votre projet vscode.*
 
@@ -167,7 +167,7 @@ PASS : 123    app.js:15
 
 Remarque : ne cherchez pas à afficher la page index.html directement depuis votre explorateur de dossiers et fichiers de votre ordinateur; passez par le Live Server de vscode.
 
-Pour arrêter le Live Server dans vscode : cliquez en bas à droite sur l'onglet suivant :
+Pour arrêter le Live Server dans vscode, cliquez en bas à droite sur l'onglet suivant :
 **Port: 5500**
 
 Remarque : le port peut éventuellement être différent.
