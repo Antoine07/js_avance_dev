@@ -25,7 +25,7 @@ InNodeJS/
     package.json
 ```
 
-Si vous utilisez les modules dans le contexte NodeJS, vous devez définir dans votre dossier de travail un fichier package.json, il faudra y définir l'utilisation de la syntaxte ES6. En effet, celle-ci vous permettra l'utilisation des imports/exports de JS.
+Si vous utilisez les modules dans le contexte NodeJS, vous devez définir dans votre dossier de travail un fichier package.json; dans lequel il faudra définir l'utilisation de la syntaxte ES6. En effet, celle-ci vous permettra l'utilisation des imports/exports de JS.
 
 - Fichier package.json, regardez dans le dossier
 
@@ -46,11 +46,11 @@ Phrase parsing  891819 891819
 
 ## export par défaut
 
-Vous ne pouvez faire qu'un export, de constante, fonction ou classe par défaut par fichier.
+Vous ne pouvez faire qu'un export, de constante, fonction ou classe par défaut et par fichier.
 
 Dans le fichier core/parse.js nous exportons la fonction parse que nous utilisons dans le fichier app.js.
 
-L'export default vous permet lors de l'import de le renommer.
+L'export default vous permet lors de l'import de le renommer, si vous le souhaitez.
 
 ```js
 // Dans le fichier parse.js
@@ -60,9 +60,9 @@ export default const parse = () => console.log("parsing...");
 import superParser from './core/parse.js';
 ``` 
 
-## export multiples
+## exports multiples
 
-Vous pouvez faire autant d'export de constante, fonction, classe que vous souhaitez :
+Vous n'êtes pas limité dans l'export de constantes, fonctions ou classes, attention cependant à la syntaxe à respecter.
 
 ```js
 export const API = "ABC123";
@@ -71,7 +71,7 @@ export const PASS = "123";
 export const sayHello = message => `Voici mon message ${messaqge}`;
 ```
 
-Vous pouvez également exporter des constantes, classes, fonctions en utilisant la syntaxe suivante :
+De manière équivalente pour l'export multiple vous pouvez utiliser la syntaxe suivante :
 
 ```js
 const API = "ABC123";
