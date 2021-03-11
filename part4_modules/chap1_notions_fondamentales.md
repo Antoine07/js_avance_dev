@@ -95,7 +95,7 @@ import parseDigit from './core/parse.js';
 parseDigit('ma phrase9909: hhh:  9897');
 ```
 
-Si on importe des constantes, classes ou fonctions (export multiple) alors on utilisera la synstaxe suivante pour les importer :
+Si on importe des constantes, classes ou fonctions (export multiple) alors on utilisera la syntaxe suivante :
 
 ```js
 import { API, PASS } from './config';
@@ -103,7 +103,7 @@ import { API, PASS } from './config';
 console.log(API, PASS);
 ```
 
-Notez que vous pouvez utiliser des alias pour renommer vos import :
+Notez que vous pouvez utiliser des alias pour renommer vos imports :
 
 ```js
 import { API as myAPI , PASS as myPass } from './config';
@@ -111,7 +111,7 @@ import { API as myAPI , PASS as myPass } from './config';
 console.log(myAPI, myPass);
 ```
 
-## Import multiple
+## Imports multiples
 
 Vous pouvez également importer l'ensemble des éléments exportés à l'aide de la syntaxe suivante :
 
@@ -121,7 +121,7 @@ import * as myCore from './core/utiles.js';
 
 ```
 
-Pour le choix de l'alias vous êtes libre de choisir le nom que vous souhaitez. JS importera dans ce cas un objet de type module. Pour accéder aux éléments du module vous utiliserez la syntaxe classe suivante :
+Pour le choix de l'alias vous êtes libre de choisir le nom que vous souhaitez. JS importera dans ce cas un objet de type module. Pour accéder aux éléments du module vous utiliserez la syntaxe suivante :
 
 ```js
 myCore.API;
@@ -133,8 +133,11 @@ myCore.parser("hello:");
 
 ### Introduction
 
-Vous pouvez importer des scripts depuis un fichier externe avec la balise script dans la page HTML. Cette technique marche très bien, mais si vous avez de nombreux scripts à importer dans un projet donné, vous devez dans ce cas faire autant d'import avec cette balise que vous avez de scripts. Et dans ce cas vous ferez autant d'appel serveur que vous importez de scripts... De plus vous devez faire attention à l'ordre dans lequel vous devez faire l'import pour gérer les dépendances...
-De plus dans ce cas tous vos scripts partagent le même scope (...) C'est un problème car vous pouvez dans ce cas avoir des problèmes de re-définitions ou collisions de variables/fonctions.
+Vous pouvez importer des scripts depuis un fichier externe avec la balise script dans la page HTML. Cette technique marche très bien, mais si vous avez de nombreux scripts à importer dans un projet donné, vous devez dans ce cas faire autant d'import avec cette balise que vous avez de scripts; ceci entraînera autant d'appels serveurs.
+
+De plus vous devez faire attention à l'ordre dans lequel vous importez vos fichiers pour gérer leurs dépendances.
+
+Cette manière d'importer ces fichiers définira un scope unique pour l'ensemble de vos variables.
 
 Nous allons voir comment on va créer un fichier "point d'entrée" qui importera l'ensemble de nos dépendances et que nous importerons dans notre page HTML.
 
