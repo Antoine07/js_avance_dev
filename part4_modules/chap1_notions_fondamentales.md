@@ -153,7 +153,7 @@ Une fois installé, vous devrier voir dans la barre d'état en bas à droite de 
 
 *Remarque : le live server se lance à la racine de votre projet vscode.*
 
-Dans cette page nous n'avons qu'à charger le fichier app.js en mentionnant à notre navigateur que le fichier importé utilise des modules, voyez l'attribut type="module" dans la balise script ci-dessous, ce code se trouve dans la page index.html : 
+Dans cette page nous n'avons qu'à charger le fichier app.js en mentionnant à notre navigateur que le fichier importé utilise des modules. Voyez l'attribut type="module" dans la balise script ci-dessous, ce code se trouve dans la page index.html : 
 
 ```html
  <script type="module" src="./app.js"></script>
@@ -165,7 +165,7 @@ API : ABC123  app.js:12
 PASS : 123    app.js:15 
 ```
 
-Remarque : ne cherchez pas à afficher la page index.html directement depuis vos dossiers et fichiers de votre OS, passez par le Live Server de vscode, le navigateur bloquera les imports (point de sécurité du navigateur, nous en reparlerons).
+Remarque : ne cherchez pas à afficher la page index.html directement depuis votre explorateur de dossiers et fichiers de votre ordinateur; passez par le Live Server de vscode.
 
 Pour arrêter le Live Server dans vscode : cliquez en bas à droite sur l'onglet suivant :
 **Port: 5500**
