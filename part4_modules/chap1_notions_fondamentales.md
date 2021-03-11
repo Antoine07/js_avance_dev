@@ -139,9 +139,9 @@ De plus vous devez faire attention à l'ordre dans lequel vous importez vos fich
 
 Cette manière d'importer ces fichiers définira un scope unique pour l'ensemble de vos variables.
 
-Pour éviter cette gestion de dépendances complexe nous allons mettre en place un fichier de type point d'entrée de l'application.
+Pour éviter cette gestion de dépendances complexe, nous allons mettre en place un fichier de type point d'entrée de l'application.
 
-Récupérez l'exemple dans le dossier HTML dans le dossier Examples.
+Récupérez l'exemple dans le dossier Examples.
 
 Vous devez également installer un module pour vscode, il nous permettra de lancer un live server :
 
@@ -149,7 +149,7 @@ Vous devez également installer un module pour vscode, il nous permettra de lanc
 
 Allez dans la partie installation de module et installez le module Live Server de Ritwick Dey.
 
-Une fois installé, vous devrier voir, placez dans la barre d'état en bas à droite de vscode, un bouton "Go Live". Cliquez dessus, le live serveur lancera votre navigateur par défaut, et naviguez dans vos dossiers pour afficher la page index.html.
+Une fois installé, vous devrier voir dans la barre d'état en bas à droite de vscode un bouton "Go Live". Cliquez dessus, le live serveur lancera votre navigateur par défaut. Naviguez ensuite dans l'arborescence de vos dossiers et fichiers pour afficher la page index.html.
 
 *Remarque : le live server se lance à la racine de votre projet vscode.*
 
