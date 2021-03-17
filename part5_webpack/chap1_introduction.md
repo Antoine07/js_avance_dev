@@ -337,7 +337,7 @@ module.exports = {
 
 - polyfill pour les nouvelles fonctionnalités des nouvelles versions de JS
 
-Si vous utilisez des nouvelles fonctionnalités qui n'existe pas en ES5 ou une autre version supérieur pour votre navigateur, nous utiliserons des polyfill. Ainsi dans votre code vous pourrez utiliser toutes les nouvelles fonctionnalités de JS sans vous souciez de la compatibilité avec la cible votre navigateur.
+Si vous utilisez les nouvelles features JS, vous devez installer des polyfill afin de les transcrire pour la plupart des navigateurs.
 
 ```js
 npm install --save babel-polyfill
@@ -375,7 +375,7 @@ const dragons = {
 export default dragons;
 ```
 
-6. Affichez la liste des dragons, dans une liste ul/li, en affichant à chaque fois si il existe son élément (fire ou water). Utilisez la nouvelle syntaxe ES2020 suivante pour tester l'existence d'une propriété :
+6. Affichez les dragons dans une liste ul/li, précisez à chaque fois, s'il existe son élément (fire ou water). Utilisez la nouvelle syntaxe ES2020 suivante pour tester l'existence d'une propriété :
 
 ```js
 
