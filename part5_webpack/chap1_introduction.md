@@ -291,7 +291,7 @@ const dragons = {
 export default dragons;
 ```
 
-1. Affichez les dragons dans une liste **ul/li**. Importerez les données dans le fichier app.js et créez une fonction addDragons que vous appelerez dans ce fichier. La fonction addEventListener permettra de charger les données une fois le DOM construit :
+1. Affichez les dragons dans une liste **ul/li**. Importez les données dans le fichier app.js et créez une fonction addDragons que vous appelerez dans ce fichier. La fonction addEventListener permettra de charger les données une fois le DOM construit :
 
 ```js
 
@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 });
 ```
 
-2. Affichez maintenant leur nombre, en premier dans la page. Modifiez la fonction addDragons.
+2. Affichez en premier leur nombre et modifiez la fonction addDragons.
 
 - Babel
 
@@ -310,7 +310,7 @@ Babel va nous permettre de traduire du code ES6 ou ES2020 en ES5 compatible avec
 npm install --save-dev babel-loader @babel/core @babel/preset-env 
 ```
 
-Dans le fichier webpack.config.js vous devez définir le loader Babel afin qu'il ré-écrive le fichier ES6 (ou JS moderne ...) en ES5 compatible avec la plupart des navigateurs. On utilise le presets @babel/preset-env. C'est une preset magique qui détermine automatiquement les transformations que Babel doit appliquer, en fonction des navigateurs que vous souhaitez supporter.
+Dans le fichier webpack.config.js vous devez définir le loader Babel. On utilise le presets @babel/preset-env.
 
 ```js
 const path = require('path'); 
