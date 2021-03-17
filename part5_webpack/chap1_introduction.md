@@ -125,7 +125,7 @@ module.exports = {
 }
 ```
 
-Dans votre fichier index.html vous importez votre fichier de build comme suit :
+Ficher index.html
 
 ```html
 <!DOCTYPE html>
@@ -143,9 +143,7 @@ Dans votre fichier index.html vous importez votre fichier de build comme suit :
 
 ## Installation & configuration d'un serveur local
 
-Nous allons utiliser le server de développement de webpack. Il nous permettra de watcher/builder les fichiers qui sont modifiés et reloadera automatiquement la page Web. De plus on peut le configurer très simplement à partir du fichier webpack.config.js.
-
-Nous commencerons pas un exemple simple.
+Nous allons utiliser le server de développement de webpack. Il nous permettra de mettre à jour automatiquement la page Web dès qu'un fichier sera modifié.Notons que sa configuration est relativement simple.
 
 ### Exemple simple de configuration 
 
