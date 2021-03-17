@@ -102,9 +102,9 @@ npm run build
 
 Vous devriez avoir maintenant un dossier dist dans l'application dans lequel webpack écrit son build.
 
-### Meilleur configuration du fichier Webpack
+### Meilleure configuration du fichier Webpack
 
-On utilise le module path afin de demander à webpack d'enregistrer notre fichier de build dans le dossier dist. Ce module possède une méthode resolve, on lui passe deux paramètres : **__dirname** et une chaîne de caractères, ici 'dist' pour qu'il enregistre le fichier de build à la racine du projet dans le dossier dist. Cette configuration est plus rapide et vous permettra de modifier éventuellement le dossier de build.
+On utilise le module path pour gérer les chemins de build. Ce module possède une méthode resolve, on lui passe deux paramètres : **__dirname** et le nom du dossier de build. Cette configuration est plus rapide et vous permettra de modifier éventuellement le dossier de build.
 
 Voyez le code du fichier index.html ci-après, nous y importons le fichier de build de webpack.
 
