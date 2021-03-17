@@ -274,7 +274,7 @@ module.exports = env => {
 
 ## 01 Exercice Dragons list
 
-Webpack applique le mode strict pour les scripts buildés, dans ce mode vous aurez plus d'erreurs JS remontés pour le. Pour les fonctions par exemple vous devez les définir avant de les appelée.
+Notez que webpack est mode strict. Celui-ci vous apportera une meilleur granularité dans la remontée des erreurs.
 
 Récupérez les données de l'exercice ci-dessous :
 
