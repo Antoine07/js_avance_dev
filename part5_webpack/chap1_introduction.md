@@ -73,7 +73,7 @@ ceci nous permettra d'appeler simplement webpack en ligne de commande à l'aide 
 }
 ```
 
-Dans la console maintenant tapez :
+Dans la console tapez maintenant :
 
 ```bash
 npm run build
@@ -81,7 +81,7 @@ npm run build
 
 ### Configuration simple du fichier webpack
 
-Exemple de configuration simple du fichier webpack.config.js, le fichier app.js est le point d'entrée de notre application front-end, nous importerons toutes les dépendances dans ce fichier. Le fichier **bundle.js** est le fichier de build de webpack, c'est ce dernier fichier que l'on importera dans notre application front dans le fichier index.html dans la balise script :
+Exemple de configuration simple du fichier webpack.config.js. Le fichier app.js est le point d'entrée de notre application front-end. Nous importerons toutes les dépendances dans ce fichier. Le fichier **bundle.js** est le build de webpack, c'est ce dernier que l'on importera dans l'index.html :
 
 ```js
 
