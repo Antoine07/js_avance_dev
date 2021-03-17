@@ -1,6 +1,6 @@
 # Webpack & Babel Introduction
 
-Vous pouvez consulter les documentations officiel des outils suivants :
+Vous pouvez consulter les documentations officielles des outils suivants :
 
 - npm
 
@@ -10,9 +10,9 @@ Vous pouvez consulter les documentations officiel des outils suivants :
 
 ## Introduction
 
-**Webpack** permet de packager ou regrouper des modules Javascripts. Il transforme également les assets front-end SASS ou images par exemple, à l'aide de loaders en assets statiques. 
+**Webpack** permet de packager ou regrouper des modules Javascripts. Il transforme également les assets front-end SASS ou images par exemple, à l'aide de loaders en assets statiques.
 
-Webpack permet de construire une application moderne. La logique interne de Webpack est basé sur ES5, mais vos scripts ES6 ne seront pas transpilés en ES5.
+Webpack permet de construire une application moderne. La logique interne de Webpack est basée sur ES5, mais vos scripts ES6 ne seront pas transpilés en ES5.
 
 **Babel** est pour sa part un transpiler (traducteur de code). Nous pouvons l'utiliser avec Webpack pour transpiler notre code ES6 en ES5 par exemple.
 
@@ -32,7 +32,7 @@ dragons/
     webpack.config.js
 ```
 
-Lancez la configuration d'un projet gérer avec **npm** à la racine de dragon tapez la ligne de commande suivante, elle crée un fichier package.json de configuration pour vos dépendances (modules) dans votre application :
+Lancez la configuration d'un projet géré avec **npm**. A la racine de dragon, tapez la ligne de commande suivante, qui crée un fichier de gestion et configuration nommé package.json :
 
 ```bash
 npm init -y
