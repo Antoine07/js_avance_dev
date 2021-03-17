@@ -375,7 +375,7 @@ const dragons = {
 export default dragons;
 ```
 
-6. Affichez les dragons dans une liste ul/li, précisez à chaque fois, s'il existe son élément (fire ou water). Utilisez la nouvelle syntaxe ES2020 suivante pour tester l'existence d'une propriété :
+6. Affichez les dragons dans une liste ul/li et précisez à chaque fois s'il existe son élément (fire ou water). Utilisez la nouvelle syntaxe ES2020 suivante pour tester l'existence d'une propriété :
 
 ```js
 
@@ -383,7 +383,7 @@ myObject?.attribut
 
 ```
 
-- Que c'est-il passé dans le fichier bundle.js ? Builder votre fichier ou inspectez le code avec l'inspecteur du navigateur.
+- Que s'est-il passé dans le fichier bundle.js ? Il faut builder votre fichier et l'inspecter avec la console du navigateur.
 
 7. Créez le fichier relationships.js suivant. Sous chaque dragon affichez ses relations avec les autres dragons :
 
@@ -394,7 +394,7 @@ const relationships =  [
     { id: 3, relations : [2] }
 ]
 ```
-8. Un jury a attribué des valeurs sur la force de chaque dragon. En utilisant les données suivantes ajoutez aux données dragons ci-dessus précédentes la moyenne de leur force. Affichez ces résultats sous chaque dragon dans la page Web.
+8. Un jury a attribué des valeurs sur la force de chaque dragon. Affichez la moyenne de ces notes sous chaque dragon.
 
 ```js
 const forces =  [
