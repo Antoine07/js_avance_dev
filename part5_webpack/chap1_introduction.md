@@ -94,13 +94,13 @@ module.exports = {
 }
 ```
 
-Exécutez la commande suivante à la racine de votre projet :
+Pour construire le build de l'application, tapez la commande suivante :
 
 ```bash
 npm run build
 ```
 
-Vous devriez avoir un dossier dist dans lequel webpack place son fichier de build.
+Vous devriez avoir maintenant un dossier dist dans l'application dans lequel webpack écrit son build.
 
 ### Meilleur configuration du fichier Webpack
 
