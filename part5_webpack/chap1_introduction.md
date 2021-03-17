@@ -274,7 +274,7 @@ module.exports = env => {
 
 ## 01 Exercice Dragons list
 
-Notez que webpack est mode strict. Celui-ci vous apportera une meilleur granularité dans la remontée des erreurs.
+Notez que webpack est en mode strict. Celui-ci vous apportera une meilleure granularité dans la remontée des erreurs.
 
 Récupérez les données de l'exercice ci-dessous :
 
@@ -291,7 +291,7 @@ const dragons = {
 export default dragons;
 ```
 
-1. Affichez la liste de vos dragons dans la page dans une liste **ul/li**. Vous importerez et préparerez les données dans le fichier app.js. Créez une fonction addDragons que vous appelerez comme suit dans le fichier app.js. Cette fonction permettra de charger les données une fois le DOM de la page en question construit :
+1. Affichez les dragons dans une liste **ul/li**. Importerez les données dans le fichier app.js et créez une fonction addDragons que vous appelerez dans ce fichier. La fonction addEventListener permettra de charger les données une fois le DOM construit :
 
 ```js
 
