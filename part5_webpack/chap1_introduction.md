@@ -143,13 +143,13 @@ Ficher index.html
 
 ## Installation & configuration d'un serveur local
 
-Nous allons utiliser le server de développement de webpack. Il nous permettra de mettre à jour automatiquement la page Web dès qu'un fichier sera modifié.Notons que sa configuration est relativement simple.
+Nous allons utiliser le server de développement de webpack. Il nous permettra de mettre à jour automatiquement la page Web dès qu'un fichier sera modifié. Notons que sa configuration est relativement simple.
 
 ### Exemple simple de configuration 
 
-Créez un dossier **webpackExample** : puis initialisez dans ce dossier la configuration suivante :
+Créez un dossier **webpackExample**.
 
-1. Lancez à la racine du dossier :
+1. Lancez à la racine du dossier (initialisation du projet) :
 
 ```bash
 npm init -y
@@ -181,7 +181,7 @@ npm install --save-dev webpack webpack-cli
 npm install --save-dev webpack-dev-server
 ```
 
-Ajoutez maintenant le code suivant dans le fichier package.json, vérifiez que vous avez bien la version v4 au moins de webpack-cli, la syntaxe pour lancer le serveur webpack change.
+Ajoutez maintenant le code suivant dans le fichier package.json et vérifiez que vous avez bien la version v4 au moins de webpack-cli.
 
 ```json
 "scripts": {
@@ -199,14 +199,6 @@ npm run start
 
 ## Configuration plus technique du fichier webpack
 
-Attention, à la version de votre webpack-cli si v4, pour la compatibilité avec le serveur de développement, vous devez écrire dans le fichier package.json pour lancer le serveur la commande start suivante :
-
-```json
-"scripts": {
-    "start": "webpack serve"
-  },
-```
-
 Dans la configuration suivante vous trouverez :
 
 - **watch** : pour lancer l'observation automatique des changements dans vos fichiers du projet. Ici vous n'en avez plus besoin en utilisant le server de webpack.
@@ -215,7 +207,7 @@ Dans la configuration suivante vous trouverez :
 
 - **output** : nous désignons ici un autre dossier pour créer le fichier de build, nous sommes obligés d'utiliser le module path pour définir un chemin absolu.
 
-- **devServer** : on définit le chemin absolu dans contentBase pour définir le chemin du point d'entrée du serveur, le port et si on doit ouvrir automatiquement le navigateur par défaut lors du lancement du serveur.
+- **devServer** : on définit le point d'entrée pour le serveur, le port, le lancement automatique du navigateur et le reload automatique.
 
 ```js
 // pour créer un chemin absolu pour webpack
@@ -241,7 +233,7 @@ module.exports = {
 }
 ```
 
-Commande de build à ajouter dans le fichier package.json, on lui précise le fichier de configuration pour tenir compte des options du build. Notez que l'on peut également passer une variable d'environnement NODE_ENV permettant de préciser que nous somme en production. Dans ce cas Webpack optimisera le/les fichier(s) de build, par exemple en mimifiant le fichier JS.
+Notez que dans le script build nous précisons : le mode de développement et le fichier de configuration en argument de cette commande.
 
 ```json
 "scripts": {
