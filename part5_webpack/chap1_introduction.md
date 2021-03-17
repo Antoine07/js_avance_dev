@@ -32,7 +32,7 @@ dragons/
     webpack.config.js
 ```
 
-Lancez la configuration d'un projet géré avec **npm**. A la racine de dragon, tapez la ligne de commande suivante, qui crée un fichier de gestion et configuration nommé package.json :
+Lancez la configuration d'un projet géré avec **npm**. A la racine de dragon, tapez la ligne de commande ci-dessous. Elle crée un fichier de gestion et configuration nommé package.json :
 
 ```bash
 npm init -y
@@ -44,13 +44,14 @@ npm init -y
 npm install --save-dev webpack webpack-cli 
 ```
 
-Notez que si vous voulez désinstaller un module en sauvegardant cela dans votre fichier package.json vous taperez la ligne de commande suivante à la racine du projet :
+Notez que si vous voulez désinstaller un module en mettant à jour le fichier package.json, vous taperez la ligne de commande suivante à la racine de votre projet :
 
 ```bash
 npm uninstall --save-dev webpack-cli
 ```
 
-Le fichier package.json a été modifié, ajoutez la clé build : "webpack" dans ce fichier de configuration, ceci nous permettra d'appeler simplement webpack en ligne de commande à l'aide de npm, voyez l'exemple ci-après :
+Après cette modification, ajoutez la clé/valeur build : "webapck" dans la partie scripts du fichier package.json;
+ceci nous permettra d'appeler simplement webpack en ligne de commande à l'aide de npm, voyez l'exemple ci-après :
 
 ```json
 {
