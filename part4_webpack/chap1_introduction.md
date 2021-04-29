@@ -8,6 +8,12 @@ Vous pouvez consulter les documentations officielles des outils suivants :
 
 - babel
 
+
+Attention lisez la remarque qui suit pour la compatiblité des dépendances :
+
+The minimum supported Node.js version to run webpack 5 is 10.13.0 (LTS)
+
+
 ## Introduction
 
 **Webpack** permet de packager ou regrouper des modules Javascripts. Il transforme également les assets front-end SASS ou images par exemple, à l'aide de loaders en assets statiques.
@@ -16,7 +22,53 @@ Webpack permet de construire une application moderne. La logique interne de Webp
 
 **Babel** est pour sa part un transpiler (traducteur de code). Nous pouvons l'utiliser avec Webpack pour transpiler notre code ES6 en ES5 par exemple.
 
-## Installation/configuration
+## Exemple d'introduction
+
+1. Créez un dossier tests et les deux fichiers suivants dans le dossier assets : logs.js et app.js. Créez également le fichier index.html et importez le fichier app.js, vous lancerez Go live pour votre fichier index.html.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Je suis un test</title>
+</head>
+<body>
+    <div id="main"></div>
+    <script src="./assets/app.js"></script>
+</body>
+</html>
+```
+
+2. Dans le fichier logs.js exportez la fonction log suivante :
+
+```js
+module.exports = function (message){
+    console.log(message);
+}
+```
+
+Et finalement importez la à l'aide d'un require dans le fichier app.js
+
+```js
+const log = require('./logs.js');
+
+log("message");
+
+```
+
+Que constatez-vous sur la page index.html, il y a effectivement une erreur. Le navigateur ne connait pas la fonction require. Webpack, nous allons le voir, va préparer un fichier bundle.js pour fusionner les fichiers app.je et logs.js afin qu'ils puissent être correctement interprétés par le navigateur.
+
+Installation de Webpack. Créez tout d'abord le fichier package.json dans le dossier tests :
+
+```bash
+npm init -y
+
+npm install --save-dev webpack
+```
+
+## Installation/configuration de l'exercice
 
 Webpack possède un fichier de configuration : **webpack.config.js** que nous allons utiliser dans nos cours/exercices :
 
